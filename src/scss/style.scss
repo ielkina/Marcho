@@ -1,19 +1,16 @@
 @import 'mixin';
-@import 'var';
-@import 'font';
+@import 'vars';
+@import 'fonts';
 @import 'reset';
 @import 'libs';
-
+// -----------------------------------------
 @import 'global';
 // -----------------------------------------
 @import 'header';
+@import 'hero';
 
-// @import 'hero';
-// @import 'popular';
-// @import 'delivery';
-// @import 'restaurant';
-// @import 'reviews';
-// @import 'apps';
 // ----------------------------------------
-// @import 'footer';
+@import 'footer';
+// -----------------------------------------------
+@import 'media';
 
