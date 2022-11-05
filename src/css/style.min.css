@@ -309,6 +309,12 @@ body {
   position: relative;
 }
 
+.user-nav__link:hover .user-nav__num {
+  color: #fe3e57;
+  background-color: #fff;
+  border: 1px solid #fe3e57;
+}
+
 .user-nav__num {
   position: absolute;
   font-size: 12px;
@@ -324,10 +330,4 @@ body {
   -webkit-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
-}
-
-.user-nav__num:hover {
-  color: #fe3e57;
-  background-color: #fff;
-  border: 1px solid #fe3e57;
 }
