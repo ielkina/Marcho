@@ -1,81 +1,144 @@
 @font-face {
-  font-family: "OpenSans";
-  src: url("../font/Quicksand-Light.woff2") format("woff2"),url("../font/Quicksand-Light.woff") format("woff");
+  font-family: "Quicksand";
+  src: local("Quicksand"),url("../fonts/Quicksand-Light.woff2") format("woff2"),url("../fonts/Quicksand-Light.woff") format("woff");
   font-weight: 300;
-  font-display: swap;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("../font/Quicksand-Regular.woff2") format("woff2"),url("../font/Quicksand-Regular.woff") format("woff");
+  font-family: "Quicksand";
+  src: local("Quicksand"),url("../fonts/Quicksand-Regular.woff2") format("woff2"),url("../fonts/Quicksand-Regular.woff") format("woff");
   font-weight: 400;
-  font-display: swap;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("../font/Quicksand-Medium.woff2") format("woff2"),url("../font/Quicksand-Medium.woff") format("woff");
+  font-family: "Quicksand";
+  src: local("Quicksand"),url("../fonts/Quicksand-Medium.woff2") format("woff2"),url("../fonts/Quicksand-Medium.woff") format("woff");
   font-weight: 500;
-  font-display: swap;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("../font/Quicksand-SemiBold.woff2") format("woff2"),url("../font/Quicksand-SemiBold.woff") format("woff");
+  font-family: "Quicksand";
+  src: local("Quicksand"),url("../fonts/Quicksand-SemiBold.woff2") format("woff2"),url("../fonts/Quicksand-SemiBold.woff") format("woff");
   font-weight: 600;
-  font-display: swap;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("../font/Quicksand-Bold.woff2") format("woff2"),url("../font/Quicksand-Bold.woff") format("woff");
+  font-family: "Quicksand";
+  src: local("Quicksand"),url("../fonts/Quicksand-Bold.woff2") format("woff2"),url("../fonts/Quicksand-Bold.woff") format("woff");
   font-weight: 700;
-  font-display: swap;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("../font/Roboto-Light.woff2") format("woff2"),url("../font/Roboto-Light.woff") format("woff");
+  font-family: "Roboto";
+  src: local("Roboto"),url("../fonts/Roboto-Light.woff2") format("woff2"),url("../fonts/Roboto-Light.woff") format("woff");
   font-weight: 300;
-  font-display: swap;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("../font/Roboto-Regular.woff2") format("woff2"),url("../font/Roboto-Regular.woff") format("woff");
+  font-family: "Roboto";
+  src: local("Roboto"),url("../fonts/Roboto-Regular.woff2") format("woff2"),url("../fonts/Roboto-Regular.woff") format("woff");
   font-weight: 400;
-  font-display: swap;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("../font/Roboto-Medium.woff2") format("woff2"),url("../font/Roboto-Medium.woff") format("woff");
+  font-family: "Roboto";
+  src: local("Roboto"),url("../fonts/Roboto-Medium.woff2") format("woff2"),url("../fonts/Roboto-Medium.woff") format("woff");
   font-weight: 500;
-  font-display: swap;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("../font/Roboto-SemiBold.woff2") format("woff2"),url("../font/Roboto-SemiBold.woff") format("woff");
+  font-family: "Roboto";
+  src: local("Roboto"),url("../fonts/Roboto-SemiBold.woff2") format("woff2"),url("../fonts/Roboto-SemiBold.woff") format("woff");
   font-weight: 600;
-  font-display: swap;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("../font/Roboto-Bold.woff2") format("woff2"),url("../font/Roboto-Bold.woff") format("woff");
+  font-family: "Roboto";
+  src: local("Roboto"),url("../fonts/Roboto-Bold.woff2") format("woff2"),url("../fonts/Roboto-Bold.woff") format("woff");
   font-weight: 700;
-  font-display: swap;
   font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  line-height: calc(1em + .5rem);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+#root,
+#__next {
+  isolation: isolate;
 }
 
 *,
@@ -141,27 +204,6 @@ button {
   cursor: pointer;
 }
 
-html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-.main {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-
-::-webkit-scrollbar {
-  width: 0;
-}
-
 body {
   background-color: #fff;
   font-family: "Quicksand",sans-serif;
@@ -169,52 +211,123 @@ body {
   font-size: 16px;
   line-height: 1.63;
   color: #8d8d8d;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow-x: hidden;
 }
 
 .container {
   max-width: 1200px;
-  width: 100%;
-  padding: 0 15px;
   margin: 0 auto;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  padding: 0 15px;
 }
 
 .logo {
   width: 183px;
   height: 30px;
-  -webkit-transition: opacity .2s,background-color .2s,-webkit-box-shadow .2s ease-in-out;
-  transition: opacity .2s,background-color .2s,-webkit-box-shadow .2s ease-in-out;
-  -o-transition: opacity .2s,background-color .2s,box-shadow .2s ease-in-out;
-  transition: opacity .2s,background-color .2s,box-shadow .2s ease-in-out;
-  transition: opacity .2s,background-color .2s,box-shadow .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
 }
 
 .logo__img {
-  width: 183px;
-  height: 30px;
+  -webkit-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
 }
 
-.logo:hover {
-  opacity: .8;
+.logo__img:hover {
+  opacity: .6;
+}
+
+.header__wrapper {
+  padding: 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu__list-item:not(:last-child) {
+  margin-right: 35px;
+}
+
+.menu__list-link {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #29282d;
+  -webkit-transition: color .2s ease-in;
+  -o-transition: color .2s ease-in;
+  transition: color .2s ease-in;
+}
+
+.menu__list-link:hover {
+  font-weight: 500;
+  color: #fe3e57;
+  border-bottom: 1px solid #fe3e57;
+}
+
+.menu__list-link--active {
+  font-weight: 500;
+  color: #fe3e57;
+  border-bottom: 1px solid #fe3e57;
+}
+
+.user-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.user-nav__item:not(:last-child) {
+  margin-right: 25px;
+}
+
+.user-nav__icon {
+  width: 23px;
+  height: 20px;
+  fill: #29282d;
+  -webkit-transition: fill .3s ease-in-out;
+  -o-transition: fill .3s ease-in-out;
+  transition: fill .3s ease-in-out;
+}
+
+.user-nav__icon:hover {
+  fill: #fe3e57;
+}
+
+.user-nav__link {
+  position: relative;
+}
+
+.user-nav__num {
+  position: absolute;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0);
+  background-color: #fe3e57;
+  top: -9px;
+  right: -14px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.user-nav__num:hover {
+  color: #fe3e57;
+  background-color: #fff;
+  border: 1px solid #fe3e57;
 }

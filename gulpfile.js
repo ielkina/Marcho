@@ -105,8 +105,8 @@ function build() {
       // 'src/**/*.min.html',
       'src/*.min.html',
       'src/css/style.min.css',
-      'src/font/*.woff',
-      'src/font/*.woff2',
+      'src/fonts/*.woff',
+      'src/fonts/*.woff2',
       'src/js/main.min.js'
 
     ], {

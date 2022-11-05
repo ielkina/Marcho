@@ -1,5 +1,5 @@
-@import 'mixin';
 @import 'vars';
+@import 'mixin';
 @import 'fonts';
 @import 'reset';
 @import 'libs';
@@ -7,10 +7,10 @@
 @import 'global';
 // -----------------------------------------
 @import 'header';
-@import 'hero';
+// @import 'hero';
 
 // ----------------------------------------
-@import 'footer';
+// @import 'footer';
 // -----------------------------------------------
 @import 'media';
 
