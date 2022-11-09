@@ -13,19 +13,19 @@
 // 3. Разрешить высоту в процентах в приложении
 html,
 body {
-  height: 100%;
+  // height: 100%;
 }
 
 // Типографские исправления ! 
 // 4. Добавьте доступную высоту строки 
 // 5. Улучшить рендеринг текста
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  // line-height: 1.5;
+  // -webkit-font-smoothing: antialiased;
 }
 
 * {
-  line-height: calc(1em + 0.5rem);
+  // line-height: calc(1em + 0.5rem);
 }
 
 // 6. Улучшите настройки мультимедиа по умолчанию
@@ -34,8 +34,8 @@ picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+  // display: block;
+  // max-width: 100%;
 }
 
 // 7. Удалите встроенные стили оформления формы
@@ -54,19 +54,19 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+  // overflow-wrap: break-word;
 }
 
 p {
-  overflow-wrap: break-word;
+  // overflow-wrap: break-word;
   // добавление дефиса для переноса слов
-  hyphens: auto;
+  // hyphens: auto;
 }
 
 // 9. Создайте корневой контекст стека
 #root,
 #__next {
-  isolation: isolate;
+  // isolation: isolate;
 }
 *,
 *::after,
@@ -116,7 +116,7 @@ select {
 
 a {
   text-decoration: none;
-  color: inherit;
+  // color: inherit;
   font: inherit;
 }
 
@@ -127,5 +127,5 @@ img {
 
 a,
 button {
-  cursor: pointer;
+  // cursor: pointer;
 }
