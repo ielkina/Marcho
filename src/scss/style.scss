@@ -1,13 +1,14 @@
 @import 'mixin';
 @import 'fonts';
 @import 'reset';
-@import 'libs';
+// ----------------------------------
 @import 'vars';
-// -----------------------------------------
 @import 'global';
+@import 'extend';
+@import 'libs';
 // -----------------------------------------
 @import 'header';
-// @import 'hero';
+@import 'hero';
 
 // ----------------------------------------
 @import 'footer';

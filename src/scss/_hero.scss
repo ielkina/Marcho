@@ -1,0 +1,99 @@
+
+.hero {
+  padding-top: 65px;
+  background-color: #f6f6f6;
+  background-image: url('../img/bg/hero-bg-1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  // по видео
+  // background-size: cover;
+  // background-repeat: no-repeat;
+
+  &__container {
+    max-width: 1560px;
+
+  }
+}
+
+.slider {
+  position: relative;
+
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+  }
+
+  &__content {
+    padding-left: 181px;
+    padding-top: 125px;
+  }
+
+  &__title {
+    max-width: 670px;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 1.17;
+    margin-bottom: 35px;
+  }
+
+  &__title-span {
+    display: block;
+  }
+
+  &__text {
+    margin-bottom: 55px;
+    max-width: 470px;
+  }
+
+  &__link {
+    padding: 19px 35px;
+  }
+
+  &__img {}
+
+  .slick-dots {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 36px;
+    font-size: 0px;
+
+    li {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 6px;
+      }
+
+      button {
+        padding: 0;
+        width: 6px;
+        height: 6px;
+        background-color: #8d8d8d;
+        border-radius: 50%;
+        border: transparent;
+        cursor: pointer;
+      }
+
+      &.slick-active {
+        border: 1px solid $accent;
+      }
+
+      &.slick-active {
+        button {
+          background-color: $accent;
+        }
+      }
+    }
+  }
+}

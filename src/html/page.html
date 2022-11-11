@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('path/head.html',{"title":"Marcho | Главная страница"})
+@include('path/head.html',{"title":"Marcho | Страница"})
 
 <body>
   <heder class="header">
     <div class="container">
       <div class="header__wrapper">
-        <a class="logo" href="#">
+        <a class="logo" href="index.html">
           <img class="logo__img" src="./img/logo/logo.png" alt="Logo">
         </a>
         <nav class="menu">
           <ul class="menu__list">
             <li class="menu__list-item">
-              <a class="menu__list-link menu__list-link--active" href="index.html">home</a>
+              <a class="menu__list-link" href="index.html">home</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="shop.html">shop</a>
+              <a class="menu__list-link " href="shop.html">shop</a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="page.html">page</a>
+              <a class="menu__list-link menu__list-link--active" href="page.html">page</a>
             </li>
             <li class="menu__list-item">
               <a class="menu__list-link" href="blog.html">blog</a>
@@ -69,9 +69,7 @@
       </div>
     </div>
   </heder>
-  <main class="main">
-    @include('path/hero.html')
-  </main>
+  <main class="main"></main>
   @include('path/footer.html')
   @include('path/script.html')
 </body>

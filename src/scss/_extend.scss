@@ -1,0 +1,44 @@
+%quick-400 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+
+%quick-500 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+%roboto-400 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+%roboto-500 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+%roboto-700 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+%btn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 58px;
+  padding: 14px 35px;
+  text-transform: uppercase;
+  color: $bg;
+  background-color: $accent;
+
+  &:hover {}
+
+  &:focus {}
+
+  &:active {}
+}
+
+%link {}
+
+%title {}

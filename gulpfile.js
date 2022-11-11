@@ -1,4 +1,4 @@
- const {
+const {
   src,
   dest,
   watch,
@@ -29,9 +29,8 @@ function browsersync() {
 
 function styles() {
   return src('src/scss/style.scss')
-    .pipe(scss({
-      outputStyle: 'compressed'
-    }))
+    // .pipe(scss({ outputStyle: 'compressed' }))
+    .pipe(scss.sync({ outputStyle: 'compressed' }).on('error', scss.logError))
     .pipe(concat('style.min.css'))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 versions'],
@@ -44,11 +43,11 @@ function styles() {
 
 function scripts() {
   return src([
-      'node_modules/jquery/dist/jquery.js',
-      'node_modules/slick-carousel/slick/slick.js',
-      'node_modules/mixitup/dist/mixitup.min.js',
-      'src/js/main.js'
-    ])
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/mixitup/dist/mixitup.min.js',
+    'src/js/main.js'
+  ])
     .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(dest('src/js'))
@@ -100,18 +99,18 @@ const htmlInclude = () => {
 
 function build() {
   return src([
-      // 'src/**/*.html',
-      'src/*.html',
-      // 'src/**/*.min.html',
-      'src/*.min.html',
-      'src/css/style.min.css',
-      'src/fonts/*.woff',
-      'src/fonts/*.woff2',
-      'src/js/main.min.js'
+    // 'src/**/*.html',
+    'src/*.html',
+    // 'src/**/*.min.html',
+    'src/*.min.html',
+    'src/css/style.min.css',
+    'src/fonts/*.woff',
+    'src/fonts/*.woff2',
+    'src/js/main.min.js'
 
-    ], {
-      base: 'src'
-    })
+  ], {
+    base: 'src'
+  })
     .pipe(dest('dist'))
 }
 

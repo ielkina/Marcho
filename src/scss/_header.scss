@@ -43,6 +43,7 @@
 .user-nav {
   display: flex;
   align-items: center;
+  padding-right: 18px;
 
   &__item {
     &:not(:last-child) {
