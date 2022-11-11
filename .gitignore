@@ -7,5 +7,5 @@
 npm-debug.
 # мои файлы
 /node_modules
-dist/
+/dist
 /package-lock.json

@@ -1,11 +1,14 @@
+// Убираем вертикальный скрол
+::-webkit-scrollbar {
+  width: 0;
+}
+
 body {
   background-color: $bg;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 500;
+  @extend %quick-500;
   font-size: 16px;
   line-height: 1.63;
   color: $text;
-  background-color: #fff;
 }
 
 .container {
@@ -15,12 +18,16 @@ body {
 }
 
 a {
-  font-family: 'Quicksand', sans-serif;
   font-size: 16px;
-  font-weight: 500;
   line-height: 2.25;
-  color: #8d8d8d;
+  color: $text;
+
   &:hover {
     color: $accent;
   }
+}
+a,
+input,
+button {
+  outline: transparent;
 }

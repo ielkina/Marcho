@@ -19,23 +19,24 @@
   }
 
   &__list-link {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    @extend %roboto-400;
     text-transform: uppercase;
+    padding: 0 2px 1px;
     color: $title;
-    transition: color 0.2s ease-in;
+    transition: all 0.2s ease-in;
 
     &:hover {
-      font-weight: 500;
+      font-weight: 700;
       color: $accent;
-      border-bottom: 1px solid $accent;
+      border-bottom: 2px solid $accent;
     }
   }
 
   &__list-link--active {
-    font-weight: 500;
+    font-weight: 700;
     color: $accent;
-    border-bottom: 1px solid $accent;
+    border-bottom: 2px solid $accent;
+    transition: all 0.2s ease-in-out;
   }
 }
 
