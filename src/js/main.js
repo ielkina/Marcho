@@ -3,7 +3,7 @@ $(function () {
   $('.slider').slick({
     dots: true,
     arrows: false,
-    // fade: true,
+    fade: true,
     // infinite: true,
     // slidesToScroll: 1,
     autoplay: true,

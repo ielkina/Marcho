@@ -18,7 +18,7 @@ body {
   width: 0;
 }
 // -------------------------------------
-
+// плавный скролл по якорям
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -53,4 +53,12 @@ button{}
 // общие стили для линков
 a{}
 // общие стили для титлов
-.title{}
+.title{
+  &__span{}
+}
+
+.subtitle{
+  &__span {
+    display: block;
+  }
+}

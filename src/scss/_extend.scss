@@ -32,13 +32,38 @@
   color: $bg;
   background-color: $accent;
 
-  &:hover {}
+  // &:hover {}
 
-  &:focus {}
+  // &:focus {}
 
-  &:active {}
+  // &:active {}
 }
 
-%link {}
+// %link {}
 
-%title {}
+%title-h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 58px;
+  line-height: 68px;
+  color: #29282D;
+  text-transform: uppercase;
+}
+
+%title-h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 26px;
+  color: #29282D;
+  text-align: center;
+ 
+}
+%item-hover {
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 20px 0px 60px #cacaca;
+    }
+}

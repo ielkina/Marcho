@@ -1,11 +1,10 @@
-
 .hero {
   padding-top: 65px;
   background-color: #f6f6f6;
-  background-image: url('../img/bg/hero-bg-1.png');
+  background-image: url('../img/bg/hero-bg.png');
   background-repeat: no-repeat;
   background-position: center;
-  
+
   // по видео
   // background-size: cover;
   // background-repeat: no-repeat;
@@ -31,10 +30,10 @@
 
   &__title {
     max-width: 670px;
-    font-weight: 700;
-    font-size: 58px;
-    line-height: 1.17;
     margin-bottom: 35px;
+    @extend %title-h1;
+
+
   }
 
   &__title-span {
