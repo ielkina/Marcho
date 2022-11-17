@@ -57,13 +57,23 @@
   line-height: 26px;
   color: #29282D;
   text-align: center;
- 
+
 }
+
 %item-hover {
   transition: transform 0.3s, box-shadow 0.3s ease-in-out;
-  
-    &:hover {
-      transform: scale(1.02);
-      box-shadow: 20px 0px 60px #cacaca;
-    }
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 20px 0px 60px #cacaca;
+  }
 }
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+

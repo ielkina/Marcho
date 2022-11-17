@@ -2,6 +2,7 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 // Убираем вертикальный скрол
 ::-webkit-scrollbar {
   width: 0;
@@ -38,7 +39,8 @@ button {
 }
 
 .slider__link,
-.footer-top__form-btn {
+.footer-top__form-btn,
+.fashion__link {
   @extend %roboto-400;
   text-transform: uppercase;
   color: $bg;
@@ -59,5 +61,3 @@ button {
   font-family: 'Roboto', sans-serif;
   color: $title;
 }
-
- 

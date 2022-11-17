@@ -32,8 +32,6 @@
     max-width: 670px;
     margin-bottom: 35px;
     @extend %title-h1;
-
-
   }
 
   &__title-span {
@@ -49,7 +47,7 @@
     padding: 19px 35px;
   }
 
-  &__img {}
+  // &__img {}
 
   .slick-dots {
     display: flex;
