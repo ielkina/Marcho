@@ -29,8 +29,8 @@ function browsersync() {
 
 function styles() {
   return src('src/scss/style.scss')
-    // .pipe(scss({ outputStyle: 'compressed' }))
-    .pipe(scss.sync({ outputStyle: 'compressed' }).on('error', scss.logError))
+    .pipe(scss({ outputStyle: 'compressed' }))
+    // .pipe(scss.sync({ outputStyle: 'compressed' }).on('error', scss.logError))
     .pipe(concat('style.min.css'))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 versions'],
@@ -45,18 +45,9 @@ function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/mixitup/dist/mixitup.js',
-    // 'node_modules/@fancyapps/ui/dist/carousel.autoplay.esm.js',
-    // 'node_modules/@fancyapps/ui/dist/carousel.autoplay.umd.js',
-    // 'node_modules/@fancyapps/ui/dist/carousel.esm.js',
-    // 'node_modules/@fancyapps/ui/dist/carousel.umd.js',
-    // 'node_modules/@fancyapps/ui/dist/fancybox.esm.js',
-    // 'node_modules/@fancyapps/ui/dist/fancybox.umd.js',
-    // 'node_modules/@fancyapps/ui/dist/panzoom.controls.esm.js',
-    // 'node_modules/@fancyapps/ui/dist/panzoom.controls.umd.js',
-    // 'node_modules/@fancyapps/ui/dist/panzoom.esm.js',
-    // 'node_modules/@fancyapps/ui/dist/panzoom.umd.js',
     'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
     'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/rateyo/src/jquery.rateyo.js',
     'src/js/main.js'
   ])
     .pipe(concat('main.min.js'))
