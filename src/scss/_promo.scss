@@ -1,0 +1,94 @@
+.promo {
+  background-image: url(../img/bg/timer-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  padding: 150px 0 160px;
+  text-align: center;
+
+  &__inner {
+    max-width: 570px;
+    width: 100%;
+    margin-left: auto;
+  }
+
+  &__subtitle {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.18;
+    color: #fe3e57;
+    text-transform: uppercase;
+    margin-bottom: 29px;
+  }
+
+  &__title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 0.54;
+    color: #29282d;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+  }
+
+  &__clock {
+    display: flex;
+    margin-bottom: 60px;
+  }
+
+  &__clock-item {
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 10px 40px 0 #bbbbbb4d;
+
+    &:not(:last-child) {
+      margin-right: 29px;
+    }
+  }
+
+  &__clock-days,
+  &__clock-hours,
+  &__clock-minutes,
+  &__clock-seconds {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1;
+    color: #29282d;
+  }
+
+  &__clock-smalltext {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.63;
+    color: #8d8d8d;
+  }
+
+  &__link {
+    @extend %btn-light;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 3.2px;
+    padding: 14px 27px;
+    margin-top: 55px;
+    @extend %btn-light-hover;
+  }
+}
+
+.partners {
+  padding: 110px 0 110px;
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+}

@@ -24,28 +24,13 @@
   }
 
   &__link {
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    @extend %btn-light;
     font-size: 16px;
     line-height: 26px;
     letter-spacing: 3.2px;
-    color: #29282D;
-    border: 1px solid #FE3E57;
-    background-color: transparent;
-    display: inline-block;
     padding: 14px 27px;
     margin-top: 55px;
-    transition:
-      color 0.3s,
-      background-color 0.3s,
-      border 0.3s ease-in-out;
-
-    &:hover {
-      color: #fff;
-      background-color: #FE3E57;
-      border: 1px solid#00000000;
-    }
+    @extend %btn-light-hover;
   }
 
   &__items {
@@ -197,7 +182,7 @@
   &--sale {
     .product-item__img-box::before {
       content: 'SALE';
-      @extend %btn;
+      @extend %btn-bg;
       font-size: 16px;
       padding: 4px 15px;
       position: absolute;

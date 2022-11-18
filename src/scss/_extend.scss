@@ -23,16 +23,6 @@
   font-weight: 700;
 }
 
-%btn {
-  font-family: 'Roboto', sans-serif;
-  font-weight: normal;
-  font-size: 58px;
-  padding: 14px 35px;
-  text-transform: uppercase;
-  color: $bg;
-  background-color: $accent;
-}
-
 %title-h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -60,6 +50,50 @@
   }
 }
 
+%btn-bg {
+  @extend %roboto-400;
+  color: $bg;
+  text-transform: uppercase;
+  background-color: $accent;
+  border: 2px solid transparent;
+  box-shadow: 0px 7px 20px 0 $btn-box-shadow;
+  cursor: pointer;
+}
+
+%btn-bg-hover {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border-color: $accent;
+    background-color: $bg;
+    color: $accent;
+  }
+}
+
+%btn-light {
+  @extend %roboto-400;
+  text-transform: uppercase;
+  color: $title;
+  border: 1px solid $accent;
+  background-color: transparent;
+  display: inline-block;
+}
+
+%btn-light-hover {
+  transition:
+    color 0.3s,
+    background-color 0.3s,
+    border 0.3s ease-in-out;
+
+  &:hover {
+    color: $bg;
+    background-color: $accent;
+    border-color: transparent;
+  }
+}
+
+
+
 @function max($numbers...) {
   @return m#{a}x(#{$numbers});
 }
@@ -67,4 +101,3 @@
 @function min($numbers...) {
   @return m#{i}n(#{$numbers});
 }
-
