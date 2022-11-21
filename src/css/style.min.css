@@ -169,6 +169,11 @@ button {
   color: #29282d;
 }
 
+.blog__text {
+  font-family: "Quicksand",sans-serif;
+  font-weight: 400;
+}
+
 .footer-top__form-input::-webkit-input-placeholder {
   font-family: "Quicksand",sans-serif;
   font-weight: 500;
@@ -207,6 +212,11 @@ body {
 .fashion__link {
   font-family: "Roboto",sans-serif;
   font-weight: 400;
+}
+
+.blog__title {
+  font-family: "Roboto",sans-serif;
+  font-weight: 700;
 }
 
 .slider__title {
@@ -1463,7 +1473,7 @@ body.compensate-for-scrollbar {
 }
 
 .slider__title {
-  max-width: 670px;
+  max-width: 690px;
   margin-bottom: 35px;
 }
 
@@ -2081,6 +2091,165 @@ body.compensate-for-scrollbar {
   -ms-flex-pack: justify;
   justify-content: space-between;
   height: 60px;
+}
+
+.blog {
+  padding: 50px 0 160px;
+  background-image: url(../img/bg/blog-bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.blog__title {
+  font-size: 48px;
+  text-transform: uppercase;
+  line-height: .54;
+  color: #29282d;
+  text-align: center;
+  margin-bottom: 29px;
+}
+
+.blog__text {
+  max-width: 570px;
+  font-size: 16px;
+  line-height: 1.63;
+  color: #8d8d8d;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 56px;
+}
+
+.blog__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+}
+
+.blog__items::after {
+  content: "";
+  position: absolute;
+  background-image: url(../img/blog/blog-bg-after.svg);
+  width: 126px;
+  height: 53px;
+  right: -24px;
+  top: -31px;
+  z-index: -1;
+}
+
+.blog__item {
+  max-width: 364px;
+  background-color: #fff;
+  border: solid 1px #ececec;
+  -webkit-transition: -webkit-box-shadow .3s ease-in-out;
+  transition: -webkit-box-shadow .3s ease-in-out;
+  -o-transition: box-shadow .3s ease-in-out;
+  transition: box-shadow .3s ease-in-out;
+  transition: box-shadow .3s ease-in-out, -webkit-box-shadow .3s ease-in-out;
+}
+
+.blog__item:hover {
+  -webkit-box-shadow: 20px 0 60px 0 rgba(202,202,202,.3490196078);
+  box-shadow: 20px 0 60px 0 rgba(202,202,202,.3490196078);
+  border-color: rgba(0,0,0,0);
+}
+
+.blog__item:hover .blog__item-link {
+  color: #fe3e57;
+}
+
+.blog__item:hover .blog__item-link .blog__item-icon {
+  fill: #fe3e57;
+}
+
+.blog__item-imglink {
+  display: block;
+}
+
+.blog__item-img {
+  height: 280px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.blog__item-box {
+  padding: 30px 40px;
+}
+
+.blog__item-info {
+  font-family: "Quicksand",sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.63;
+  color: #8d8d8d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.blog__item-author,
+.blog__item-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.blog__item-author:hover .blog__item-icon,
+.blog__item-data:hover .blog__item-icon {
+  fill: #fe3e57;
+}
+
+.blog__item-icon {
+  fill: #8d8d8d;
+  margin-right: 10px;
+  -webkit-transition: fill .3s ease-in-out;
+  -o-transition: fill .3s ease-in-out;
+  transition: fill .3s ease-in-out;
+}
+
+.blog__item-data:hover .blog__item-icon {
+  fill: #8d8d8d;
+}
+
+.blog__item-title-link {
+  margin-bottom: 20px;
+}
+
+.blog__item-title {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.45;
+  color: #29282d;
+  -webkit-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.blog__item-title:hover {
+  color: #fe3e57;
+}
+
+.blog__item-link {
+  -webkit-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
 }
 
 html,

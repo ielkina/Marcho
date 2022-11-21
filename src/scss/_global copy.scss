@@ -64,19 +64,23 @@ body {
   &__span {
     display: block;
   }
-
-  &:hover {}
-
-  &:focus {}
-
-  &:active {}
 }
+
+.tit {}
+
+.rubric {}
+
+.banner {}
+
+.caption {}
 
 .subtitle {
   &__span {
     display: block;
   }
 }
+
+.topic {}
 
 //общие стили для лого
 .logo {
@@ -88,19 +92,21 @@ body {
 }
 
 // общие стили для кнопок
-button {
-  &:hover {}
-
-  &:focus {}
-
-  &:active {}
-}
+.btn {}
 
 // общие стили для линков
-a {
-  &:hover {}
+.link {}
 
-  &:focus {}
+.ref {}
 
-  &:active {}
-}
+//блоки
+.block {}
+
+.box {}
+
+//
+.img {}
+
+.picture {}
+
+.photo {}
