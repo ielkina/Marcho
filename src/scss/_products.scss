@@ -3,29 +3,23 @@
   text-align: center;
 
   &__title {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
+    @extend %roboto-700;
     text-transform: uppercase;
     font-size: 48px;
     line-height: 26px;
-    color: #29282D;
+    color: $title;
     margin-bottom: 30px;
   }
 
   &__text {
     max-width: 571px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
     line-height: 26px;
-    color: #8D8D8D;
     margin: 0 auto;
     margin-bottom: 60px;
   }
 
   &__link {
     @extend %btn-light;
-    font-size: 16px;
     line-height: 26px;
     letter-spacing: 3.2px;
     padding: 14px 27px;
@@ -62,7 +56,7 @@
   }
 
   &__link-box {
-    background-color: #fff;
+    background-color: $bg;
     position: absolute;
     left: 0;
     right: 0;
@@ -127,7 +121,7 @@
       position: absolute;
       height: 30px;
       width: 1px;
-      background-color: #8D8D8D;
+      background-color: $text;
       top: 10px;
     }
 
@@ -141,7 +135,7 @@
   }
 
   &__icon {
-    fill: #29282d;
+    fill: $title;
     transition: fill 0.2s ease-in-out;
   }
 
@@ -166,16 +160,12 @@
   }
 
   &__new-price {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.63;
-    color: #29282d;
+    @extend %roboto-500;
+    color: $title;
   }
 
   &__old-price {
-    color: #ccccce;
-    // text-decoration: line-through;
+    color: $border;
     text-decoration-color: red;
   }
 
@@ -183,7 +173,6 @@
     .product-item__img-box::before {
       content: 'SALE';
       @extend %btn-bg;
-      font-size: 16px;
       padding: 4px 15px;
       position: absolute;
       top: 25px;
@@ -191,5 +180,4 @@
       line-height: 1;
     }
   }
-
 }

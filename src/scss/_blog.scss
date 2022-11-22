@@ -1,6 +1,6 @@
 .blog {
   padding: 50px 0 160px;
-  background-image: url(../img/bg/blog-bg.png);
+  background-image: url(../img/decor/blog-bg.png);
   background-position: center center;
   background-repeat: no-repeat;
 
@@ -9,7 +9,7 @@
     font-size: 48px;
     text-transform: uppercase;
     line-height: 0.54;
-    color: #29282d;
+    color: $title;
     text-align: center;
     margin-bottom: 29px;
   }
@@ -17,25 +17,19 @@
   &__text {
     max-width: 570px;
     @extend %quick-400;
-    font-size: 16px;
-    line-height: 1.63;
-    color: #8d8d8d;
     text-align: center;
-    margin: 0 auto;
-    margin-bottom: 56px;
+    margin: 0 auto 56px;
   }
 
   &__items {
     display: flex;
     justify-content: space-between;
-    // flex-wrap: wrap;
-    // gap: 30px;
     position: relative;
 
     &::after {
       content: '';
       position: absolute;
-      background-image: url(../img/blog/blog-bg-after.svg);
+      background-image: url(../img/decor/blog-bg-after.svg);
       width: 126px;
       height: 53px;
       right: -24px;
@@ -46,13 +40,9 @@
 
   &__item {
     max-width: 364px;
-    background-color: #fff;
-    border: solid 1px #ececec;
+    background-color: $bg;
+    border: solid 1px $border;
     transition: box-shadow 0.3s ease-in-out;
-
-    // &:not(:last-child) {
-    //   // margin-right: 30px;
-    // }
 
     &:hover {
       box-shadow: 20px 0 60px 0 #cacaca59;
@@ -82,11 +72,7 @@
   }
 
   &__item-info {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.63;
-    color: #8d8d8d;
+    @extend %quick-500;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -107,7 +93,7 @@
   }
 
   &__item-icon {
-    fill: #8d8d8d;
+    fill: $text;
     margin-right: 10px;
     transition: fill 0.3s ease-in-out;
   }
@@ -115,7 +101,7 @@
   &__item-data {
     &:hover {
       & .blog__item-icon {
-        fill: #8d8d8d;
+        fill: $text;
       }
     }
   }
@@ -125,11 +111,10 @@
   }
 
   &__item-title {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    @extend %roboto-400;
     font-size: 21px;
     line-height: 1.45;
-    color: #29282d;
+    color: $title;
     transition: color 0.3s ease-in-out;
 
 

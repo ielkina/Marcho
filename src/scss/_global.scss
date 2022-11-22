@@ -26,6 +26,7 @@ a {
   font-size: 16px;
   line-height: 2.25;
   color: $text;
+  transition: color 0.3s ease-in-out;
 
   &:hover {
     color: $accent;
@@ -54,4 +55,31 @@ button {
 .footer-top__title {
   font-family: 'Roboto', sans-serif;
   color: $title;
+}
+
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
+  padding-left: 25px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url(..img/icons/icon-home.svg);
+  }
+
+  &__list {
+    display: inherit;
+    align-items: center;
+    justify-content: inherit;
+  }
+
+  &__item {}
+
+  &__link {
+
+    color: #727272;
+  }
+
+  &__icon {}
 }

@@ -9,23 +9,23 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="css/style.min.css">
-  <title>Marcho | Магазин</title>
+  <title>Marcho | Логин</title>
 </head>
 
 <body>
   <heder class="header">
   <div class="container">
     <div class="header__wrapper">
-      <a class="logo" href="index.html">
+      <a class="logo" href="#">
         <img class="logo__img" src="./img/logo/logo.png" alt="Logo">
       </a>
       <nav class="menu">
         <ul class="menu__list">
           <li class="menu__list-item">
-            <a class="menu__list-link" href="index.html">home</a>
+            <a class="menu__list-link menu__list-link--active" href="index.html">home</a>
           </li>
           <li class="menu__list-item">
-            <a class="menu__list-link menu__list-link--active" href="shop.html">shop</a>
+            <a class="menu__list-link" href="shop.html">shop</a>
           </li>
           <li class="menu__list-item">
             <a class="menu__list-link" href="page.html">page</a>
@@ -40,7 +40,7 @@
       </nav>
       <ul class="user-nav">
         <li class="user-nav__item">
-          <a class="user-nav__link" href="#">
+          <a class="user-nav__link" href="login-page.html">
             <svg class="user-nav__icon">
               <use xlink:href="img/icons/sprite.svg#icon-user"></use>
             </svg>
@@ -60,7 +60,7 @@
             </form> -->
         </li>
         <li class="user-nav__item">
-          <a class="user-nav__link" href="#">
+          <a class="user-nav__link" href="">
             <svg class="user-nav__icon">
               <use xlink:href="img/icons/sprite.svg#icon-heart"></use>
             </svg>
@@ -68,7 +68,7 @@
           </a>
         </li>
         <li class="user-nav__item">
-          <a class="user-nav__link" href="#">
+          <a class="user-nav__link" href="">
             <svg class="user-nav__icon">
               <use xlink:href="img/icons/sprite.svg#icon-cart"></use>
             </svg>
@@ -79,7 +79,36 @@
     </div>
   </div>
 </heder>
-  <main class="main"></main>
+  <main class="main">
+    <section class="top">
+      <div class="top__container" style="background-image: url(../img/decor/page-bg.jpg);">
+        <div class="container">
+          <h2 class="top__title">login in</h2>
+          <div class="breadcrumbs">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="index.html">
+                  <!-- <svg class="breadcrumbs__icon" style="fill: #727272; width: 16px; height: 16px;">
+                    <use xlink:href="img/icons/sprite.svg#icon-home"></use>
+                  </svg> -->
+                  Home
+                </a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">
+                  <!-- <svg class="breadcrumbs__icon" style="fill: #727272; width: 9px; height: 10px;">
+                    <use xlink:href="img/icons/sprite.svg#icon-ref"></use>
+                  </svg> -->
+                  Log in
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
   <footer class="footer">
   <div class="container">
     <div class="footer-top">
@@ -206,9 +235,9 @@
     <div class="footer-bottom">
       <p class="footer-bottom__copy">© 2019 CodeAstrology. All Rights Reserved.</p>
       <div class="footer-bottom__accept">We Accept
-        <img class="footer-bottom__accept-img" src="img/paymant/mastercard-s.png" alt="we accept mastercard">
-        <img class="footer-bottom__accept-img" src="img/paymant/visa-s.png" alt="we accept visa">
-        <img class="footer-bottom__accept-img" src="img/paymant/paypal-s.png" alt="we accept paypal">
+        <img class="footer-bottom__accept-img" src="img/content/paymant/mastercard-s.png" alt="we accept mastercard">
+        <img class="footer-bottom__accept-img" src="img/content/paymant/visa-s.png" alt="we accept visa">
+        <img class="footer-bottom__accept-img" src="img/content/paymant/paypal-s.png" alt="we accept paypal">
       </div>
     </div>
   </div>

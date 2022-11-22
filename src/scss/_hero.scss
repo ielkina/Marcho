@@ -1,7 +1,7 @@
 .hero {
   padding-top: 65px;
-  background-color: #f6f6f6;
-  background-image: url('../img/bg/hero-bg.png');
+  background-color: $bg-footer;
+  background-image: url('../img/decor/hero-bg.png');
   background-repeat: no-repeat;
   background-position: center;
 
@@ -76,7 +76,7 @@
         padding: 0;
         width: 6px;
         height: 6px;
-        background-color: #8d8d8d;
+        background-color: $text;
         border-radius: 50%;
         border: transparent;
         cursor: pointer;

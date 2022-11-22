@@ -20,10 +20,10 @@ body {
 
 .footer-top {
   padding: 70px 0 40px;
-  border-bottom: 1px solid $border-bottom;
+  border-bottom: 1px solid $border;
   display: flex;
 
-  &__item {}
+  // &__item {}
 
   &__contact {
     width: 250px;
@@ -42,9 +42,9 @@ body {
     display: block;
   }
 
-  &__email {}
+  // &__email {}
 
-  &__phone {}
+  // &__phone {}
 
   &__social-list {
     display: flex;
@@ -56,7 +56,7 @@ body {
     padding-right: 18px;
   }
 
-  &__social-link {}
+  // &__social-link {}
 
   &__social-icon {
     margin: 0;
@@ -81,7 +81,7 @@ body {
     line-height: 1;
   }
 
-  &__list {}
+  // &__list {}
 
   &__link {
     transition: all .3s;
@@ -99,7 +99,7 @@ body {
     margin-bottom: 35px;
   }
 
-  &__form {}
+  // &__form {}
 
   &__form-input {
     background-color: $bg;
@@ -119,9 +119,6 @@ body {
     }
 
     &::placeholder {
-      @extend %quick-500;
-      color: $text;
-      font-size: 16px;
       line-height: 2.25;
       transition: all 0.2s ease-in-out;
     }
@@ -142,16 +139,10 @@ body {
   font-size: 12px;
 
   &__copy {
-    @extend %quick-500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 2.83;
-    letter-spacing: normal;
-    text-align: left;
-    color: $text;
   }
 
-  &__accept {}
+  // &__accept {}
 
   &__accept-img {
     display: inline;

@@ -80,7 +80,7 @@ $(function () {
 
   // const deadline = new Date(Date.parse(new Date()) + 29 * 24 * 60 * 60 * 1000);//1 вариант
   // const deadline = '2022-12-31'; //2 вариант дата окончания акции
-  const deadline = $('.promo__clock'). attr('data-time'); //3 вариант дата окончания акции c html
+  const deadline = $('.promo__clock').attr('data-time'); //3 вариант дата окончания акции c html
   initializeClock('promo__clock', deadline);
 });
 
