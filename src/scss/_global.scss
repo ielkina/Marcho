@@ -57,29 +57,3 @@ button {
   color: $title;
 }
 
-.breadcrumbs {
-  display: flex;
-  justify-content: center;
-  padding-left: 25px;
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    background-image: url(..img/icons/icon-home.svg);
-  }
-
-  &__list {
-    display: inherit;
-    align-items: center;
-    justify-content: inherit;
-  }
-
-  &__item {}
-
-  &__link {
-
-    color: #727272;
-  }
-
-  &__icon {}
-}
