@@ -39,9 +39,7 @@ button {
   outline: transparent;
 }
 
-.slider__link,
-.footer-top__form-btn,
-.fashion__link {
+.btn-bg {
   @extend %roboto-400;
   text-transform: uppercase;
   color: $bg;
@@ -52,8 +50,18 @@ button {
   @extend %btn-bg-hover;
 }
 
+.btn-light {
+  @extend %roboto-400;
+  text-transform: uppercase;
+  color: $title;
+  border: 1px solid $accent;
+  background-color: transparent;
+  display: inline-block;
+  @extend %btn-light-hover;
+}
+
+
 .footer-top__title {
   font-family: 'Roboto', sans-serif;
   color: $title;
 }
-

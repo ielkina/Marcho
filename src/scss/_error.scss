@@ -1,0 +1,28 @@
+.error {
+
+
+  &__content {
+  
+
+  }
+
+  &__title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 26px;
+    color: #28384F;
+    margin-bottom: 19px;
+  }
+
+  &__text {
+    max-width: 485px;
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    padding: 14px 18px;
+    
+  }
+}

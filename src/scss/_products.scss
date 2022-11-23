@@ -19,12 +19,10 @@
   }
 
   &__link {
-    @extend %btn-light;
     line-height: 26px;
     letter-spacing: 3.2px;
     padding: 14px 27px;
     margin-top: 55px;
-    @extend %btn-light-hover;
   }
 
   &__items {
@@ -172,7 +170,14 @@
   &--sale {
     .product-item__img-box::before {
       content: 'SALE';
-      @extend %btn-bg;
+      @extend %roboto-400;
+      text-transform: uppercase;
+      color: $bg;
+      background-color: $accent;
+      border: 2px solid transparent;
+      box-shadow: 0px 7px 20px 0 $btn-box-shadow;
+      cursor: pointer;
+      @extend %btn-bg-hover;
       padding: 4px 15px;
       position: absolute;
       top: 25px;
