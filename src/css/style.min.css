@@ -212,7 +212,8 @@ body {
 }
 
 .blog__title,
-.product__title {
+.product__title,
+.page-404__title {
   font-family: "Roboto",sans-serif;
   font-weight: 700;
 }
@@ -1497,6 +1498,10 @@ body.compensate-for-scrollbar {
   transition: all .3s ease-in-out;
 }
 
+.header--bg {
+  background-color: #f6f6f6;
+}
+
 .modal {
   padding-top: 100px;
   max-width: 570px;
@@ -1584,23 +1589,38 @@ body.compensate-for-scrollbar {
   font-size: 18px;
 }
 
-.error__title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 26px;
-  color: #28384f;
-  margin-bottom: 19px;
+.page-404 {
+  padding: 110px 0 120px;
 }
 
-.error__text {
-  max-width: 485px;
+.page-404__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.page-404__content {
+  max-width: 570px;
+  width: 100%;
+}
+
+.page-404__title {
+  font-size: 48px;
+  line-height: .58;
+  color: #28384f;
   margin-bottom: 40px;
 }
 
-.error__link {
-  padding: 14px 18px;
+.page-404__text {
+  max-width: 458px;
+  margin-bottom: 64px;
+}
+
+.page-404__link {
+  padding: 14px 31px;
 }
 
 .hero {
