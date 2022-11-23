@@ -1529,6 +1529,10 @@ body.compensate-for-scrollbar {
   color: #8d8d8d;
 }
 
+.modal__label:hover {
+  color: #fe3e57;
+}
+
 .modal__input {
   margin-top: 14px;
   display: block;
@@ -1538,6 +1542,11 @@ body.compensate-for-scrollbar {
   padding: 0 15px;
   height: 60px;
   margin-bottom: 40px;
+}
+
+.modal__text {
+  color: #8d8d8d;
+  margin-bottom: 25px;
 }
 
 .modal__btn {

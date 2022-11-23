@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('path/head.html',{"title":"Marcho | Логин"})
+@include('path/head.html',{"title":"Marcho|Логин"})
 
 <body>
   @include('path/header-home.html')
@@ -32,7 +32,30 @@
         </div>
       </div>
     </section>
-    @include('path/login.html')
+    <section class="modal">
+      <div class="container">
+        <div class="modal__links">
+          <a class="modal__link" href="register.html">REGISTER</a>
+          <a class="modal__link modal__link--active" href="login.html">LOGIN</a>
+        </div>
+        <form class="modal__form" action="#">
+          <label class="modal__label">
+            Username or email address*
+            <input class="modal__input" required>
+          </label>
+          <label class="modal__label">
+            Password*
+            <input id="password-input" class="modal__input" type="password" required>
+          </label>
+          <label class="modal__label">
+            <input type="checkbox">
+            Remember me
+          </label>
+          <button class="modal__btn" type="submit">LOG IN</button>
+          <a class="modal__lost-pas" href="#">Lost your password?</a>
+        </form>
+      </div>
+    </section>
   </main>
   @include('path/footer.html')
   @include('path/script.html')

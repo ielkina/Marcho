@@ -22,13 +22,17 @@
     color: $accent;
   }
 
-  &__form {}
+  // &__form {}
 
   &__label {
     display: block;
     @extend %quick-500;
     font-size: 16px;
     color: #8d8d8d;
+
+    &:hover {
+      color: $accent;
+    }
   }
 
   &__input {
@@ -40,6 +44,11 @@
     padding: 0 15px;
     height: 60px;
     margin-bottom: 40px;
+  }
+
+  &__text {
+    color: #8D8D8D;
+    margin-bottom: 25px;
   }
 
   &__btn {
