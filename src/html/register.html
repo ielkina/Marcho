@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+@include('path/head.html',{"title":"Marcho | Логин"})
+
+<body>
+  @include('path/header-home.html')
+  <main class="main">
+    <section class="top">
+      <div class="top__container" style="background-image: url(../img/decor/page-bg.jpg);">
+        <div class="container">
+          <h2 class="top__title">register</h2>
+          <div class="breadcrumbs">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="index.html">
+                  <!-- <svg class="breadcrumbs__icon" style="fill: #727272; width: 16px; height: 16px;">
+                    <use xlink:href="img/icons/sprite.svg#icon-home"></use>
+                  </svg> -->
+                  Home
+                </a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">
+                  <!-- <svg class="breadcrumbs__icon" style="fill: #727272; width: 9px; height: 10px;">
+                    <use xlink:href="img/icons/sprite.svg#icon-ref"></use>
+                  </svg> -->
+                  Register
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    @include('path/register.html')
+  </main>
+  @include('path/footer.html')
+  @include('path/script.html')
+</body>
+
+</html>

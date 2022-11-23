@@ -185,6 +185,7 @@ button {
 }
 
 .blog__item-info,
+.modal__label,
 body {
   font-family: "Quicksand",sans-serif;
   font-weight: 500;
@@ -195,6 +196,8 @@ body {
 .category__link,
 .category__item-title,
 .info__item-title,
+.modal__btn,
+.modal__link,
 .menu__list-link,
 .top__title,
 .btn-bg,
@@ -1355,6 +1358,7 @@ body.compensate-for-scrollbar {
 }
 
 .breadcrumbs__item {
+  font-weight: 500;
   color: #727272;
   padding-right: 40px;
   position: relative;
@@ -1382,25 +1386,6 @@ body.compensate-for-scrollbar {
 .breadcrumbs__link {
   color: inherit;
   line-height: 1;
-}
-
-.error__title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 26px;
-  color: #28384f;
-  margin-bottom: 19px;
-}
-
-.error__text {
-  max-width: 485px;
-  margin-bottom: 40px;
-}
-
-.error__link {
-  padding: 14px 18px;
 }
 
 .header__wrapper {
@@ -1510,6 +1495,103 @@ body.compensate-for-scrollbar {
   -webkit-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+}
+
+.modal {
+  padding-top: 100px;
+  max-width: 570px;
+  margin: 0 auto 115px;
+}
+
+.modal__links {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.modal__link {
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 22px;
+  color: #909090;
+  margin: 0 30px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.modal__link--active {
+  color: #fe3e57;
+}
+
+.modal__label {
+  display: block;
+  font-size: 16px;
+  color: #8d8d8d;
+}
+
+.modal__input {
+  margin-top: 14px;
+  display: block;
+  width: 100%;
+  border: rgba(0,0,0,0);
+  background-color: #f6f6f6;
+  padding: 0 15px;
+  height: 60px;
+  margin-bottom: 40px;
+}
+
+.modal__btn {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  color: #fff;
+  background-color: #29282d;
+  line-height: 1;
+  padding: 20.5px 0;
+  border: 1.5px solid rgba(0,0,0,0);
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+
+.modal__btn:hover {
+  border-color: #29282d;
+  background-color: rgba(0,0,0,0);
+  color: #29282d;
+}
+
+.modal__lost-pas {
+  display: inline-block;
+  height: 40px;
+  color: #fe3e57;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.modal__lost-pas:hover {
+  font-size: 18px;
+}
+
+.error__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 26px;
+  color: #28384f;
+  margin-bottom: 19px;
+}
+
+.error__text {
+  max-width: 485px;
+  margin-bottom: 40px;
+}
+
+.error__link {
+  padding: 14px 18px;
 }
 
 .hero {

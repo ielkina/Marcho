@@ -1,0 +1,76 @@
+.modal {
+  padding-top: 100px;
+  max-width: 570px;
+  margin: 0 auto 115px;
+
+  &__links {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    @extend %roboto-400;
+    line-height: 1;
+    font-size: 22px;
+    color: #909090;
+    margin: 0 30px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__link--active {
+    color: $accent;
+  }
+
+  &__form {}
+
+  &__label {
+    display: block;
+    @extend %quick-500;
+    font-size: 16px;
+    color: #8d8d8d;
+  }
+
+  &__input {
+    margin-top: 14px;
+    display: block;
+    width: 100%;
+    border: transparent;
+    background-color: $bg-footer;
+    padding: 0 15px;
+    height: 60px;
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    @extend %roboto-400;
+    color: $bg;
+    background-color: $title;
+    line-height: 1;
+    padding: 20.5px 0;
+    border: 1.5px solid transparent;
+    transition: all 0.3s ease-in-out;
+    margin-top: 14px;
+    margin-bottom: 20px;
+
+    &:hover {
+      border-color: $title;
+      background-color: transparent;
+      color: $title;
+    }
+  }
+
+  &__lost-pas {
+    display: inline-block;
+    height: 40px;
+    color: $accent;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      font-size: 18px;
+    }
+  }
+}

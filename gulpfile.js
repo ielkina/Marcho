@@ -12,6 +12,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const groupCssMediaQueries = require("gulp-group-css-media-queries");
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin-changba');
+// const imagemin = require('gulp-imagemin');
 const del = require('del');
 const pug = require('gulp-pug');
 const browserSync = require('browser-sync').create();
@@ -57,28 +58,21 @@ function scripts() {
 }
 
 function images() {
-  return src('src/img/**/*.*')
+  return src('src/img/**/**')
     .pipe(imagemin(
-      [
-        imagemin.gifsicle({
-          interlaced: true
-        }),
-        imagemin.mozjpeg({
-          quality: 75,
-          progressive: true
-        }),
-        imagemin.optipng({
-          optimizationLevel: 5
-        }),
-        imagemin.svgo({
-          plugins: [{
-            removeViewBox: true
-          }, {
-            cleanupIDs: false
-          }]
-        })
-      ]))
-    .pipe(dest('dist/img'))
+      // [
+      //   imagemin.gifsicle({ interlaced: true }),
+      //   imagemin.mozjpeg({ quality: 75, progressive: true }),
+      //   imagemin.optipng({ optimizationLevel: 5 }),
+      //   imagemin.svgo({
+      //     plugins: [
+      //       { removeViewBox: true },
+      //       { cleanupIDs: false }
+      //     ]
+      //   })
+      // ]
+    ))
+    .pipe(dest('marcho/img')) //название репозитория готового проекта
 }
 
 function pugs() {
@@ -113,11 +107,11 @@ function build() {
   ], {
     base: 'src'
   })
-    .pipe(dest('dist'))
+    .pipe(dest('marcho')) //название репозитория готового проекта
 }
 
 function cleanDist() {
-  return del('dist')
+  return del('marcho') //название репозитория готового проекта
 }
 
 function watching() {
@@ -137,6 +131,5 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 exports.htmlInclude = htmlInclude;
 exports.pugs = pugs;
-// exports.build = build;
 exports.build = series(cleanDist, images, build); //gulp build
 exports.default = parallel(pugs, htmlInclude, styles, scripts, browsersync, watching) //gulp
