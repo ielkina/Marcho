@@ -7,3 +7,10 @@ $btn-box-shadow: #ff11304d;
 $input-box-shadow: #c0c0c04d;
 $border: #ececec;
 
+%checkbox-hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  position: absolute;
+}

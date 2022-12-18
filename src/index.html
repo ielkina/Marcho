@@ -25,7 +25,7 @@
             <a class="menu__list-link menu__list-link--active" href="index.html">home</a>
           </li>
           <li class="menu__list-item">
-            <a class="menu__list-link" href="404-page.html">shop</a>
+            <a class="menu__list-link" href="shop.html">shop</a>
           </li>
           <li class="menu__list-item">
             <a class="menu__list-link" href="#">page</a>
@@ -50,21 +50,13 @@
           <svg class="user-nav__icon">
             <use xlink:href="img/icons/sprite.svg#icon-search"></use>
           </svg>
-          <!-- <form id="content">
-              <input type="text" name="input" class="input" id="search-input">
-              <button type="reset" class="search" id="search-btn">
-                <svg class="user-nav__icon">
-                  <use xlink:href="img/icons/sprite.svg#icon-search"></use>
-                </svg>
-              </button>
-            </form> -->
         </li>
         <li class="user-nav__item">
           <a class="user-nav__link" href="#">
             <svg class="user-nav__icon">
               <use xlink:href="img/icons/sprite.svg#icon-heart"></use>
             </svg>
-            <span class="user-nav__num">3</span>
+            <span class="user-nav__num">0</span>
           </a>
         </li>
         <li class="user-nav__item">
@@ -72,7 +64,7 @@
             <svg class="user-nav__icon">
               <use xlink:href="img/icons/sprite.svg#icon-cart"></use>
             </svg>
-            <span class="user-nav__num">7</span>
+            <span class="user-nav__num">0</span>
           </a>
         </li>
       </ul>
@@ -131,7 +123,6 @@
     <div class="container">
       <div class="info">
         <div class="info__item">
-          <!-- <div class="info__item" style="background-image: url(../img/icons/icon-shipping.svg);"> -->
           <svg width="60" height="60" viewBox="0 0 60 60" fill="none"> -->
             <g clip-path="url(#clip0_0_1411)">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M-6e-05 -6e-05H59.9999V59.9998H-6e-05V-6e-05Z"
@@ -146,12 +137,10 @@
               </clipPath>
             </defs>
           </svg>
-          <!-- <img class="info__item-img" src="img/icons/icon-shipping.svg" alt="shipping"> -->
           <h4 class="info__item-title">Free Shipping Order $100</h4>
           <p class="info__item-text">Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do</p>
         </div>
         <div class="info__item">
-          <!-- <div class="info__item" style="background-image: url(../img/icons/icon-30day.svg);"> -->
           <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
             <g clip-path="url(#clip0_0_1391)">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M-6e-05 -6e-05H59.9999V59.9998H-6e-05V-6e-05Z"
@@ -166,12 +155,10 @@
               </clipPath>
             </defs>
           </svg>
-          <!-- <img class="info__item-img" src="img/icons/icon-30day.svg" alt="30day"> -->
           <h4 class="info__item-title">30 Days Easy Return</h4>
           <p class="info__item-text">Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do</p>
         </div>
         <div class="info__item">
-          <!-- <div class="info__item" style="background-image: url(../img/icons/icon-support.svg);"> -->
           <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
             <g clip-path="url(#clip0_0_1368)">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M0 -6e-05H60V59.9998H0V-6e-05Z" fill="#FE3E57" />
@@ -185,7 +172,6 @@
               </clipPath>
             </defs>
           </svg>
-          <!-- <img class="info__item-img" src="img/icons/icon-support.svg" alt="support"> -->
           <h4 class="info__item-title">24/7 Customer Support</h4>
           <p class="info__item-text">Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do</p>
         </div>
@@ -235,7 +221,6 @@
         <p class="fashion__text">Lorem ipsum dolor sit amet, consectetur apiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua
         consectetur adipiscing elit, sedu do eiusmod temp indidunt ut labore et dolore magna aliqua.. Quis ipsum de ultcesm.
         Risus commodo viverra maecenas.</p>
-        <!-- <button class="fashion__btn"></button> -->
         <a class="btn-bg fashion__link" href="#">View Now</a>
       </div>
     </div>
@@ -268,11 +253,21 @@
             </a>
           </div>
         </div>
-        <div class="product-item__star" data-rateyo-rating="4"></div>
-        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-        <div class="product-item__price">
-          <div class="product-item__new-price">$34.00</div>
-          <del class="product-item__old-price">$27.00</del>
+        <div class="product-item__wrapper-box">
+          <div class="product-item__box">
+            <div class="product-item__star" data-rateyo-rating="4"></div>
+            <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+            <div class="product-item__price">
+              <div class="product-item__new-price">$34.00</div>
+              <del class="product-item__old-price">$27.00</del>
+            </div>
+          </div>
+          <div class="product-item__content-box">
+            <p class="product-item__text">Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod utlitoi labore et
+              dolore
+              magna aliqua.</p>
+            <button class="product-item__btn">Add to cart</button>
+          </div>
         </div>
       </div>
       <div class="product-item product-item--sale">
@@ -296,11 +291,21 @@
             </a>
           </div>
         </div>
-        <div class="product-item__star" data-rateyo-rating="4"></div>
-        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-        <div class="product-item__price">
-          <div class="product-item__new-price">$34.00</div>
-          <del class="product-item__old-price">$27.00</del>
+        <div class="product-item__wrapper-box">
+          <div class="product-item__box">
+            <div class="product-item__star" data-rateyo-rating="4"></div>
+            <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+            <div class="product-item__price">
+              <div class="product-item__new-price">$34.00</div>
+              <del class="product-item__old-price">$27.00</del>
+            </div>
+          </div>
+          <div class="product-item__content-box">
+            <p class="product-item__text">Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod utlitoi labore et
+              dolore
+              magna aliqua.</p>
+            <button class="product-item__btn">Add to cart</button>
+          </div>
         </div>
       </div>
       <div class="product-item">
@@ -324,11 +329,21 @@
             </a>
           </div>
         </div>
-        <div class="product-item__star" data-rateyo-rating="4"></div>
-        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-        <div class="product-item__price">
-          <div class="product-item__new-price">$34.00</div>
-          <del class="product-item__old-price">$27.00</del>
+        <div class="product-item__wrapper-box">
+          <div class="product-item__box">
+            <div class="product-item__star" data-rateyo-rating="4"></div>
+            <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+            <div class="product-item__price">
+              <div class="product-item__new-price">$34.00</div>
+              <del class="product-item__old-price">$27.00</del>
+            </div>
+          </div>
+          <div class="product-item__content-box">
+            <p class="product-item__text">Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod utlitoi labore et
+              dolore
+              magna aliqua.</p>
+            <button class="product-item__btn">Add to cart</button>
+          </div>
         </div>
       </div>
       <div class="product-item product-item--sale">
@@ -352,11 +367,21 @@
             </a>
           </div>
         </div>
-        <div class="product-item__star" data-rateyo-rating="5"></div>
-        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-        <div class="product-item__price">
-          <div class="product-item__new-price">$34.00</div>
-          <del class="product-item__old-price">$27.00</del>
+        <div class="product-item__wrapper-box">
+          <div class="product-item__box">
+            <div class="product-item__star" data-rateyo-rating="4"></div>
+            <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+            <div class="product-item__price">
+              <div class="product-item__new-price">$34.00</div>
+              <del class="product-item__old-price">$27.00</del>
+            </div>
+          </div>
+          <div class="product-item__content-box">
+            <p class="product-item__text">Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod utlitoi labore et
+              dolore
+              magna aliqua.</p>
+            <button class="product-item__btn">Add to cart</button>
+          </div>
         </div>
       </div>
       <div class="product-item">
@@ -380,11 +405,21 @@
             </a>
           </div>
         </div>
-        <div class="product-item__star" data-rateyo-rating="4"></div>
-        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-        <div class="product-item__price">
-          <div class="product-item__new-price">$34.00</div>
-          <del class="product-item__old-price">$27.00</del>
+        <div class="product-item__wrapper-box">
+          <div class="product-item__box">
+            <div class="product-item__star" data-rateyo-rating="4"></div>
+            <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+            <div class="product-item__price">
+              <div class="product-item__new-price">$34.00</div>
+              <del class="product-item__old-price">$27.00</del>
+            </div>
+          </div>
+          <div class="product-item__content-box">
+            <p class="product-item__text">Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod utlitoi labore et
+              dolore
+              magna aliqua.</p>
+            <button class="product-item__btn">Add to cart</button>
+          </div>
         </div>
       </div>
       <div class="product-item product-item--sale">
@@ -408,15 +443,25 @@
             </a>
           </div>
         </div>
-        <div class="product-item__star" data-rateyo-rating="4"></div>
-        <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
-        <div class="product-item__price">
-          <div class="product-item__new-price">$34.00</div>
-          <del class="product-item__old-price">$27.00</del>
+        <div class="product-item__wrapper-box">
+          <div class="product-item__box">
+            <div class="product-item__star" data-rateyo-rating="4"></div>
+            <h4 class="product-item__title">White Polo Men’s T-Shirt</h4>
+            <div class="product-item__price">
+              <div class="product-item__new-price">$34.00</div>
+              <del class="product-item__old-price">$27.00</del>
+            </div>
+          </div>
+          <div class="product-item__content-box">
+            <p class="product-item__text">Lorem ipsum dolor sit amet, adipiscing elit, sed de eusmod utlitoi labore et
+              dolore
+              magna aliqua.</p>
+            <button class="product-item__btn">Add to cart</button>
+          </div>
         </div>
       </div>
     </div>
-    <a class="btn-light product__link" href="#">LOAD MORE</a>
+    <a class="btn-light product__link" href="shop.html">LOAD MORE</a>
   </div>
 </section>
     <div class="promo">
@@ -703,7 +748,7 @@
     </div>
   </div>
 </footer>
-  <script src="js/main.min.js"></script>
+<script src="js/main.min.js"></script>
 </body>
 
 </html>

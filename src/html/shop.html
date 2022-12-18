@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('path/head.html',{"title":"Marcho | Логин"})
+@include('path/head.html',{"title":"Marcho | Shop"})
 
 <body>
-  @include('path/header/header-home.html')
+  @include('path/header/header-shop.html')
   <main class="main">
     <section class="top">
       <div class="top__container" style="background-image: url(../img/decor/page-bg.jpg);">
         <div class="container">
-          <h2 class="top__title"></h2>
+          <h2 class="top__title">Shop page</h2>
           <div class="breadcrumbs">
             <ul class="breadcrumbs__list">
               <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="index.html">Home</a>
+                <a class="breadcrumbs__link" href="index.html">
+                  Home
+                </a>
               </li>
               <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link  modal__link--active" href="#"></a>
+                <a class="breadcrumbs__link  modal__link--active" href="#">Shop page</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
+    @include('path/shop.html')
   </main>
   @include('path/footer.html')
-<script src="js/main.min.js"></script>
+  <script src="js/main.min.js"></script>
 </body>
 
 </html>

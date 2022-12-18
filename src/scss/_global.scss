@@ -41,6 +41,7 @@ button {
 
 .btn-bg {
   @extend %roboto-400;
+  padding: 0;
   text-transform: uppercase;
   color: $bg;
   background-color: $accent;
@@ -58,6 +59,66 @@ button {
   background-color: transparent;
   display: inline-block;
   @extend %btn-light-hover;
+}
+
+.pagination {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__prev {
+
+    // margin-right: 46px;
+  }
+
+  &__arrows {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+
+      & .pagination__prev-icon,
+      .pagination__next-icon {
+        fill: $accent;
+      }
+    }
+  }
+
+  &__prev-icon {
+    fill: #8d8d8d;
+    width: 5px;
+    height: 11px;
+    margin-right: 9px;
+  }
+
+  &__list {
+    display: flex;
+    padding: 0 35px;
+    // margin-right: 46px;
+  }
+
+  &__item {
+    padding: 0 15px;
+  }
+
+  &__link {
+    &--active {
+      color: $accent;
+    }
+  }
+
+  &__next {
+    text-transform: uppercase;
+  }
+
+  &__next-icon {
+    fill: #8d8d8d;
+    width: 5px;
+    height: 11px;
+    margin-left: 9px;
+  }
 }
 
 
