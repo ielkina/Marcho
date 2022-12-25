@@ -31,7 +31,7 @@ function browsersync() {
 function styles() {
   return src('src/scss/style.scss')
     .pipe(scss({ outputStyle: 'compressed' }))
-    // .pipe(scss.sync({ outputStyle: 'compressed' }).on('error', scss.logError))
+    .pipe(scss.sync({ outputStyle: 'compressed' }).on('error', scss.logError))
     .pipe(concat('style.min.css'))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 versions'],
@@ -101,6 +101,7 @@ function build() {
   return src([
     // 'src/**/*.html',
     'src/*.html',
+    'src/pages/*.html',//
     // 'src/**/*.min.html',
     'src/*.min.html',
     'src/css/style.min.css',
@@ -123,6 +124,7 @@ function watching() {
   watch(['src/**/*.pug'], pugs);
   watch(['src/js/**/*.js', '!src/js/main.min.js'], scripts);
   watch(['src/*.html']).on('change', browserSync.reload);
+  watch(['src/pages/*.html']).on('change', browserSync.reload);//
   watch(['src/html/**/*.html'], htmlInclude);
 }
 

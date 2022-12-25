@@ -1,51 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('path/head.html',{"title":"Marcho | Логин"})
+@include('path/head.html',{"title":"Marcho | Login"})
 
 <body>
   @include('path/header/header-home.html')
   <main class="main">
-    <section class="top">
-      <div class="top__container" style="background-image: url(../img/decor/page-bg.jpg);">
-        <div class="container">
-          <h2 class="top__title">login in</h2>
-          <div class="breadcrumbs">
-            <ul class="breadcrumbs__list">
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="index.html">Home</a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">Log in</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="modal">
-      <div class="container">
-        <div class="modal__links">
-          <a class="modal__link" href="register.html">REGISTER</a>
-          <a class="modal__link modal__link--active" href="login.html">LOGIN</a>
-        </div>
-        <form class="modal__form" action="#">
-          <label class="modal__label">
-            Username or email address*
-            <input class="modal__input" required>
-          </label>
-          <label class="modal__label">
-            Password*
-            <input id="password-input" class="modal__input" type="password" required>
-          </label>
-          <label class="modal__label">
-            <input type="checkbox">
-            Remember me
-          </label>
-          <button class="modal__btn" type="submit">LOG IN</button>
-          <a class="modal__lost-pas" href="#">Lost your password?</a>
-        </form>
-      </div>
-    </section>
+    @include('path/top.html')
+    @include('path/modal.html')
   </main>
   @include('path/footer.html')
   <script src="js/main.min.js"></script>
