@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const burger = document.querySelector(".burger"); //наша кнопка
   // const mobileMenu = document.querySelector(".menu__list"); //мобильное меню
   const mobileMenu = document.querySelector(".navbar"); //мобильное меню
-  const mobileLogo = document.querySelector(".logo")//лого
+  const mobileLogo = document.querySelector(".logo"); //лого
   const bodyLock = document.querySelector("body"); //ищем как селектор ТЕГА
 
   burger.addEventListener("click", () => {
@@ -30,13 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 $(function () {
-  $('.reviews-slider').slick({
+  $(".reviews-slider").slick({
     dots: true,
     arrows: true,
-    prevArrow: '<button type="button" class="slick-prev"><svg class="slick-prev__icon"><use class="slick-prev__icon-use" xlink:href="img/sprite.svg#icon-prev-arrow"></use></svg></button >',
-    nextArrow: '<button type="button" class="slick-next"><svg class="slick-next__icon"><use class="slick-next__icon-use" xlink:href="img/sprite.svg#icon-next-arrow"></use></svg></button>'
+    prevArrow:
+      '<button type="button" class="slick-prev"><svg class="slick-prev__icon"><use class="slick-prev__icon-use" xlink:href="img/sprite.svg#icon-prev-arrow"></use></svg></button >',
+    nextArrow:
+      '<button type="button" class="slick-next"><svg class="slick-next__icon"><use class="slick-next__icon-use" xlink:href="img/sprite.svg#icon-next-arrow"></use></svg></button>',
   });
-  var mixer = mixitup('.popular-food');
-})
-
-
+  var mixer = mixitup(".popular-food");
+});

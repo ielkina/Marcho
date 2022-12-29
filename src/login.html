@@ -31,7 +31,7 @@
             <a class="menu__list-link" href="#">page</a>
           </li>
           <li class="menu__list-item">
-            <a class="menu__list-link" href="#">blog</a>
+            <a class="menu__list-link" href="blog.html">blog</a>
           </li>
           <li class="menu__list-item">
             <a class="menu__list-link" href="#">contact</a>
@@ -73,18 +73,25 @@
 </heder>
   <main class="main">
     <section class="top">
-  <div class="top__container" style="background-image: url(../img/decor/page-bg.jpg);">
+  <div
+    class="top__container"
+    style="background-image: url(../img/decor/page-bg.jpg)"
+  >
     <div class="container">
-      <h2 class="top__title">product</h2>
+      <h2 class="top__title">login</h2>
       <div class="breadcrumbs">
         <ul class="breadcrumbs__list">
           <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="index.html">
-              Home
-            </a>
+            <!-- <svg class="breadcrumbs__icon"style="width: 16px; height: 16px;">
+              <use xlink:href="img/icons/sprite.svg#icon-home"></use>
+            </svg> -->
+            <a class="breadcrumbs__link" href="index.html">Home</a>
           </li>
           <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link  modal__link--active" href="#">Product</a>
+            <!-- <svg class="breadcrumbs__icon" style="width: 9px; height: 10px;">
+              <use xlink:href="img/icons/sprite.svg#icon-ref"></use>
+            </svg> -->
+            <a class="breadcrumbs__link modal__link--active" href="#">Login</a>
           </li>
         </ul>
       </div>
@@ -111,7 +118,7 @@
         <input type="checkbox">
         Remember me
       </label>
-      <button class="modal__btn" type="submit">LOG IN</button>
+      <button class="modal__btn" type="submit" disabled>LOG IN</button>
       <a class="modal__lost-pas" href="#">Lost your password?</a>
     </form>
   </div>
@@ -235,8 +242,8 @@
           aliqua. Quis ipsum suspendisse ultrices gravida.
         </p>
         <form class="footer-top__form" action="#">
-          <input class="footer-top__form-input" type="email" placeholder="Your email address" required>
-          <button class="btn-bg footer-top__form-btn" type="submit">Subscribe</button>
+          <input class="footer-top__form-input"  placeholder="Your email address" type="email" required>
+          <button class="btn-bg footer-top__form-btn" type="submit" disabled>Subscribe</button>
         </form>
       </div>
     </div>

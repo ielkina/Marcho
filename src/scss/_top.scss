@@ -1,5 +1,4 @@
 .top {
-
   &__container {
     max-width: 1700px;
     margin: 0 auto;
@@ -20,17 +19,18 @@
 
 .breadcrumbs {
   display: inline-flex;
+  align-items: center;
   justify-content: center;
   padding-left: 25px;
   position: relative;
 
   &::before {
     position: absolute;
-    content: '';
-    background-image: url(../img/icons/icon-home.svg);
+    content: "";
+    display: inline-block;
+    background-image: url(../img/icons/icon-home.png);
     width: 16px;
     height: 16px;
-    top: 4px;
     left: 0;
   }
 
@@ -45,14 +45,16 @@
     color: #727272;
     padding-right: 40px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
-      background-image: url(../img/icons/icon-ref.svg);
+      background-image: url(../img/icons/icon-ref.png);
       width: 9px;
       height: 10px;
-      top: 9px;
       right: 15px;
     }
 
@@ -70,6 +72,4 @@
     color: inherit;
     line-height: 1;
   }
-
-  &__icon {}
 }

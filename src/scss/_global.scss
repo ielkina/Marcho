@@ -3,7 +3,7 @@ html {
   scroll-behavior: smooth;
 }
 
-// Убираем вертикальный скрол
+// Убираем вертикальный скролл
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -14,6 +14,12 @@ body {
   font-size: 16px;
   line-height: 1.63;
   color: $text;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .container {
@@ -43,12 +49,17 @@ button {
   @extend %roboto-400;
   padding: 0;
   text-transform: uppercase;
+  line-height: 1;
   color: $bg;
   background-color: $accent;
   border: 2px solid transparent;
   box-shadow: 0px 7px 20px 0 $btn-box-shadow;
   cursor: pointer;
   @extend %btn-bg-hover;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 .btn-light {
@@ -68,7 +79,6 @@ button {
   align-items: center;
 
   &__prev {
-
     // margin-right: 46px;
   }
 
@@ -121,8 +131,7 @@ button {
   }
 }
 
-
 .footer-top__title {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: $title;
 }

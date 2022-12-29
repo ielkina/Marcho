@@ -147,7 +147,7 @@
       padding: 30px 40px;
     }
   }
-  
+
   &__content-box {
     display: none;
   }
@@ -281,7 +281,8 @@
     text-decoration-color: $text;
   }
 
-  &--sale {
+  &--sale,
+  &--discount {
     .product-item__img-box::before {
       content: 'SALE';
       @extend %roboto-400;
@@ -297,6 +298,18 @@
       top: 25px;
       left: 25px;
       line-height: 1;
+    }
+  }
+
+  &--sale {
+    .product-item__img-box::before {
+      content: 'SALE';
+    }
+  }
+
+  &--discount {
+    .product-item__img-box::before {
+      content: '%50 off';
     }
   }
 }

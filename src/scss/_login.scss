@@ -70,6 +70,9 @@
       background-color: transparent;
       color: $title;
     }
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   &__lost-pas {

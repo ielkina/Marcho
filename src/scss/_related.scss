@@ -1,0 +1,171 @@
+.related {
+  padding: 50px 0 120px;
+
+  &__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 0.58;
+    text-transform: uppercase;
+    text-align: center;
+    color: #29282d;
+    margin-bottom: 60px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+
+    & .product-item__img-box {
+      height: auto;
+    }
+
+    & .product-item__images {
+      object-position: bottom center;
+      height: 270px;
+    }
+
+    & .product-item__title {
+      padding: 5px 0;
+    }
+  }
+}
+
+.product-item {
+
+  // .product-item__img-box
+
+  &__img-box {}
+
+  // .product-item__images
+
+  &__images {}
+
+  // .product-item__wrapper-box
+
+  &__wrapper-box {}
+
+  // .product-item__box
+
+  &__box {}
+
+  // .product-item__star
+
+  &__star {}
+
+  // 
+
+  &__title {}
+
+  // .product-item__price
+
+  &__price {}
+
+  // .product-item__old-price
+
+  &__old-price {}
+
+  // .product-item__new-price
+
+  &__new-price {}
+}
+
+// .related {
+//   padding: 60px 0 120px;
+//   // .related__title
+
+//   &__title {
+
+//   }
+
+//   // .related__items
+
+//   &__items {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+// }
+
+// .product-item {
+
+//   // .product-item__img-box
+
+//   &__img-box {
+//   }
+
+//   // .product-item__images
+
+//   &__images {
+//   }
+
+//   // .product-item__link-box
+
+//   &__link-box {
+//   }
+
+//   // .product-item__link
+
+//   &__link {
+//   }
+
+//   // .product-item__icon
+
+//   &__icon {
+//   }
+
+//   // .product-item__link-line
+
+//   &__link-line {
+//   }
+
+//   // .product-item__wrapper-box
+
+//   &__wrapper-box {
+//   }
+
+//   // .product-item__box
+
+//   &__box {
+//   }
+
+//   // .product-item__star
+
+//   &__star {
+//   }
+
+//   // .product-item__title
+
+//   &__title {
+//   }
+
+//   // .product-item__price
+
+//   &__price {
+//   }
+
+//   // .product-item__old-price
+
+//   &__old-price {
+//   }
+
+//   // .product-item__new-price
+
+//   &__new-price {
+//   }
+
+//   // .product-item__content-box
+
+//   &__content-box {
+//   }
+
+//   // .product-item__text
+
+//   &__text {
+//   }
+
+//   // .product-item__btn
+
+//   &__btn {
+//   }
+// }

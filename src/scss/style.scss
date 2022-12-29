@@ -6,9 +6,10 @@
 @import 'global';
 @import 'extend';
 @import 'libs';
-@import 'page';
+
 // -----------------------------------------
 @import 'header';
+@import 'top';
 @import 'login';
 @import '404-page';
 // -----------------------------------------
@@ -16,6 +17,7 @@
 @import 'category';
 @import 'fashion';
 @import 'products';
+@import 'related';
 @import 'promo';
 @import 'blog';
 @import 'shop';
