@@ -27,6 +27,11 @@ $(function () {
     fade: true,
     asNavFor: ".product-slide__thumb",
   });
+  $(".blog-page__slide").slick({
+    infinite: false,
+    prevArrow: '<button class="prev-arrow"><svg class="icon" style="width: 10px;height: 15px;"><use xlink:href="img/icons/sprite.svg#play"></use></svg></button>',
+    nextArrow: '<button class="next-arrow"><svg class="icon" style="width: 10px;height: 15px;"><use xlink:href="img/icons/sprite.svg#play"></use></svg></button> '
+  });
 
   $(".shop-content__filter-btn").on("click", function () {
     $(".shop-content__filter-btn").removeClass(
@@ -94,10 +99,10 @@ $(function () {
     // fullStar: true,
     // rating: 3.2,
     readOnly: true,
-    // starSvg:
-    //   '<svg class="icon">' +
-    //   ' <use xlink:href="img/icons/sprite.svg#icon-heart"></use>' +
-    //   " </svg>",
+    starSvg:
+      ' <svg class="icon">' +
+      ' <use xlink:href="img/icons/sprite.svg#icon-star"></use>' +
+      "</svg>",
   });
 
   function getTimeRemaining(endtime) {
