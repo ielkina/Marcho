@@ -41,9 +41,11 @@ body {
 }
 
 //стили обертки
-.inner {}
+.inner {
+}
 
-.wrapper {}
+.wrapper {
+}
 
 //скрытый элемент
 .sr-only {
@@ -66,13 +68,17 @@ body {
   }
 }
 
-.tit {}
+.tit {
+}
 
-.rubric {}
+.rubric {
+}
 
-.banner {}
+.banner {
+}
 
-.caption {}
+.caption {
+}
 
 .subtitle {
   &__span {
@@ -80,33 +86,45 @@ body {
   }
 }
 
-.topic {}
+.topic {
+}
 
 //общие стили для лого
 .logo {
-  &:hover {}
+  &:hover {
+  }
 
-  &:focus {}
+  &:focus {
+  }
 
-  &:active {}
+  &:active {
+  }
 }
 
 // общие стили для кнопок
-.btn {}
+.btn {
+}
 
 // общие стили для линков
-.link {}
+.link {
+}
 
-.ref {}
+.ref {
+}
 
 //блоки
-.block {}
+.block {
+}
 
-.box {}
+.box {
+}
 
 //
-.img {}
+.img {
+}
 
-.picture {}
+.picture {
+}
 
-.photo {}
+.photo {
+}

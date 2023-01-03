@@ -7,6 +7,7 @@ const groupCssMediaQueries = require("gulp-group-css-media-queries");
 const uglify = require("gulp-uglify");
 const imagemin = require("gulp-imagemin-changba");
 // const imagemin = require('gulp-imagemin');
+const cleancss = require("gulp-clean-css");
 const del = require("del");
 const pug = require("gulp-pug");
 const browserSync = require("browser-sync").create();
@@ -23,19 +24,23 @@ function browsersync() {
 }
 
 function styles() {
-  return src("src/scss/style.scss")
-    .pipe(scss({ outputStyle: "compressed" }))
-    .pipe(scss.sync({ outputStyle: "compressed" }).on("error", scss.logError))
-    .pipe(concat("style.min.css"))
-    .pipe(
-      autoprefixer({
-        overrideBrowserslist: ["last 10 versions"],
-        grid: true,
-      })
-    )
-    .pipe(groupCssMediaQueries())
-    .pipe(dest("src/css"))
-    .pipe(browserSync.stream());
+  return (
+    src("src/scss/style.scss")
+      .pipe(scss.sync({ outputStyle: "compressed" }).on("error", scss.logError))
+      .pipe(scss({ outputStyle: "compressed" }))
+      .pipe(cleancss({ level: 2 }))
+      .pipe(concat("style.min.css"))
+      .pipe(
+        autoprefixer({
+          cascade: false,
+          // overrideBrowserslist: ["last 10 versions"],
+          // grid: true,
+        })
+      )
+      .pipe(groupCssMediaQueries())
+      .pipe(dest("src/css"))
+      .pipe(browserSync.stream())
+  );
 }
 
 function scripts() {
