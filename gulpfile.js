@@ -30,11 +30,10 @@ function styles() {
       .pipe(scss({ outputStyle: "compressed" }))
       .pipe(cleancss({ level: 2 }))
       .pipe(concat("style.min.css"))
-      .pipe(
-        autoprefixer({
+      .pipe(autoprefixer({
           cascade: false,
-          // overrideBrowserslist: ["last 10 versions"],
-          // grid: true,
+          overrideBrowserslist: ["last 10 versions"],
+          grid: true,
         })
       )
       .pipe(groupCssMediaQueries())
@@ -78,7 +77,7 @@ function images() {
       //   })
       // ]
     )
-    .pipe(dest("marcho/img")); //название репозитория готового проекта
+    .pipe(dest("dist/img")); //название репозитория готового проекта
 }
 
 function pugs() {
@@ -111,6 +110,7 @@ function build() {
       "src/pages/*.html", //
       // 'src/**/*.min.html',
       "src/*.min.html",
+      "src/video/",
       "src/css/style.min.css",
       "src/fonts/*.woff",
       "src/fonts/*.woff2",
@@ -119,11 +119,11 @@ function build() {
     {
       base: "src",
     }
-  ).pipe(dest("marcho")); //название репозитория готового проекта
+  ).pipe(dest("dist")); //название репозитория готового проекта
 }
 
 function cleanDist() {
-  return del("marcho"); //название репозитория готового проекта
+  return del("dist"); //название репозитория готового проекта
 }
 
 function watching() {
