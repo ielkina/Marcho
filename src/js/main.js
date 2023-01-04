@@ -1,4 +1,5 @@
 "use strict";
+
 $(".comments-form__btn").click(function () {
   $("form")[0].reset();
 });
@@ -29,8 +30,10 @@ $(function () {
   });
   $(".blog-page__slide").slick({
     infinite: false,
-    prevArrow: '<button class="prev-arrow"><svg class="icon" style="width: 10px;height: 15px;"><use xlink:href="img/icons/sprite.svg#play"></use></svg></button>',
-    nextArrow: '<button class="next-arrow"><svg class="icon" style="width: 10px;height: 15px;"><use xlink:href="img/icons/sprite.svg#play"></use></svg></button> ',
+    prevArrow:
+      '<button class="prev-arrow"><svg class="icon" style="width: 10px;height: 15px;"><use xlink:href="img/icons/sprite.svg#play"></use></svg></button>',
+    nextArrow:
+      '<button class="next-arrow"><svg class="icon" style="width: 10px;height: 15px;"><use xlink:href="img/icons/sprite.svg#play"></use></svg></button> ',
   });
 
   $(".shop-content__filter-btn").on("click", function () {
@@ -99,7 +102,8 @@ $(function () {
     // fullStar: true,
     // rating: 3.2,
     readOnly: true,
-    starSvg: ' <svg class="icon">' +
+    starSvg:
+      ' <svg class="icon">' +
       ' <use xlink:href="img/icons/sprite.svg#icon-star"></use>' +
       "</svg>",
   });
@@ -148,4 +152,5 @@ $(function () {
   // const deadline = '2022-12-31'; //2 вариант дата окончания акции
   const deadline = $(".promo__clock").attr("data-time"); //3 вариант дата окончания акции c html
   initializeClock("promo__clock", deadline);
+  
 });

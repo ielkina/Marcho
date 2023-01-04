@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="css/style.min.css">
-  <title>Marcho | Blog</title>
+  <title>Marcho | Contact</title>
 </head>
 
 <body>
@@ -101,10 +101,44 @@
 
     <section class="contact">
   <div class="container">
-    <img class="contact__map" src="img/decor/map.jpg" alt="map">
+    <div id="map" class="contact__map"></div>
     <div class="contact__inner">
-      <div class="contact__info">1</div>
-      <div class="contact__form">2</div>
+      <div class="contact__info">
+        <h3 class="contact__info-title">
+          Feel Free Don’t Hesitate To Contact With Us
+        </h3>
+        <p class="contact__info-text">
+          Lorem ipsum dolor sit amet, consectetur adingn elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+          suspendisse ultrices gravida. Risus commodo maecnaacnrao cumsan lacus
+          vel facilisis.
+        </p>
+        <ul class="contact__info-list">
+          <li class="contact__info-item contact__info-item--tel">
+            <a class="contact__info-tel" href="tel:+01234567896">+0-123-456-7896</a>
+            <a class="contact__info-tel" href="tel:+01234567896">+0-123-456-7896</a>
+          </li>
+          <li class="contact__info-item contact__info-item--location">
+            <a class="contact__link" target="_blank" href="https://goo.gl/maps/p8VPQf3D3fFxZkUm7">Ranlon Market 789
+              Road, Market Street,
+              Newyork</a>
+          </li>
+          <li class="contact__info-item contact__info-item--email">
+            <a class="contact__mail" href="mailto:yourmailaddress@gmail.com">yourmailaddress@gmail.com</a>
+            <a class="contact__mail" href="mailto:companymail@gmail.com">companymail@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+      <form class="contact__form" action="#">
+        <p class="contact__form-title">Contact Form</p>
+        <div class="contact__info-box">
+          <input class="contact__form-input" type="text" placeholder="Your Name" required>
+          <input class="contact__form-input" type="email" placeholder="Your E-mail Address" required>
+        </div>
+        <input class="contact__form-input" type="text" placeholder="Subject" required>
+        <textarea class="contact__form-text" placeholder="Message here" required></textarea>
+        <button class="btn-bg contact__form-btn" type="submit" disabled>send message</button>
+      </form>
     </div>
   </div>
 </section>
@@ -242,6 +276,218 @@
     </div>
   </div>
 </footer>
+  <!-- <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+        defer></script> -->
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&v=weekly" defer></script>
+  <script>
+    let map;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: {
+          lat: 40.72720690051432,
+          lng: -73.95503046034474
+        },
+        zoom: 10,
+        styles: [{
+            "featureType": "all",
+            "elementType": "geometry.stroke",
+            "stylers": [{
+              "visibility": "simplified"
+            }]
+          },
+          {
+            "featureType": "administrative",
+            "elementType": "all",
+            "stylers": [{
+              "visibility": "off"
+            }]
+          },
+          {
+            "featureType": "administrative",
+            "elementType": "labels",
+            "stylers": [{
+                "visibility": "simplified"
+              },
+              {
+                "color": "#a31645"
+              }
+            ]
+          },
+          {
+            "featureType": "landscape",
+            "elementType": "all",
+            "stylers": [{
+                "weight": "3.79"
+              },
+              {
+                "visibility": "on"
+              },
+              {
+                "color": "#ffecf0"
+              }
+            ]
+          },
+          {
+            "featureType": "landscape",
+            "elementType": "geometry",
+            "stylers": [{
+              "visibility": "on"
+            }]
+          },
+          {
+            "featureType": "landscape",
+            "elementType": "geometry.stroke",
+            "stylers": [{
+              "visibility": "on"
+            }]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [{
+                "visibility": "simplified"
+              },
+              {
+                "color": "#a31645"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [{
+                "saturation": "0"
+              },
+              {
+                "lightness": "0"
+              },
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "geometry.stroke",
+            "stylers": [{
+              "visibility": "off"
+            }]
+          },
+          {
+            "featureType": "poi.business",
+            "elementType": "all",
+            "stylers": [{
+                "visibility": "simplified"
+              },
+              {
+                "color": "#d89ca8"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.business",
+            "elementType": "geometry",
+            "stylers": [{
+              "visibility": "on"
+            }]
+          },
+          {
+            "featureType": "poi.business",
+            "elementType": "geometry.fill",
+            "stylers": [{
+                "visibility": "on"
+              },
+              {
+                "saturation": "0"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.business",
+            "elementType": "labels",
+            "stylers": [{
+              "color": "#a31645"
+            }]
+          },
+          {
+            "featureType": "poi.business",
+            "elementType": "labels.icon",
+            "stylers": [{
+                "visibility": "simplified"
+              },
+              {
+                "lightness": "84"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "all",
+            "stylers": [{
+                "saturation": -100
+              },
+              {
+                "lightness": 45
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "all",
+            "stylers": [{
+              "visibility": "simplified"
+            }]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "labels.icon",
+            "stylers": [{
+              "visibility": "off"
+            }]
+          },
+          {
+            "featureType": "transit",
+            "elementType": "all",
+            "stylers": [{
+              "visibility": "off"
+            }]
+          },
+          {
+            "featureType": "water",
+            "elementType": "all",
+            "stylers": [{
+                "color": "#d89ca8"
+              },
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "geometry.fill",
+            "stylers": [{
+                "visibility": "on"
+              },
+              {
+                "color": "#fedce3"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "labels",
+            "stylers": [{
+              "visibility": "off"
+            }]
+          }
+        ]
+      });
+    }
+  </script>
   <script src="js/main.min.js"></script>
 </body>
 
