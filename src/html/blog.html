@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('path/head.html',{"title":"Marcho | Blog"})
+@include('../modules/head/head.html',{"title":"Marcho | Blog"})
 
 <body>
-  @include('path/header/header-blog.html')
+  @include('../modules/header/header-blog.html')
   <main class="main">
-    @include('path/top/top-blog.html')
-    @include('path/blog-page.html')
+     @include('../modules/top/top-blog.html')
+    @include('../modules/blog/blog-page.html')
   </main>
-  @include('path/footer.html')
+  @include('../modules/footer/footer.html')
   <script src="js/main.min.js"></script>
 </body>
 

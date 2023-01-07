@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('path/head.html',{"title":"Marcho | Shop"})
+@include('../modules/head/head.html',{"title":"Marcho | Shop"})
 
 <body>
-  @include('path/header/header-page.html')
+  @include('../modules/header/header-page.html')
   <main class="main">
-    @include('path/top/top-product.html')
-    @include('path/product-two.html')
-    @include('path/related.html')
+    @include('../modules/top/top-product.html')
+    @include('../modules/products/product-two.html')
+    @include('../modules/products/related.html')
   </main>
-  @include('path/footer.html')
+   @include('../modules/footer/footer.html')
   <script src="js/main.min.js"></script>
 </body>
 

@@ -1,45 +1,72 @@
 const { src, dest, watch, parallel, series } = require("gulp");
 
 const scss = require("gulp-sass")(require("sass"));
+const sass = require("gulp-sass")(require("sass"));
+const cssbeautify = require("gulp-cssbeautify");
+const rename = require("gulp-rename");
 const concat = require("gulp-concat");
+const removeComments = require("gulp-strip-css-comments");
 const autoprefixer = require("gulp-autoprefixer");
 const groupCssMediaQueries = require("gulp-group-css-media-queries");
 const uglify = require("gulp-uglify");
-const imagemin = require("gulp-imagemin-changba");
-// const imagemin = require('gulp-imagemin');
-const cleancss = require("gulp-clean-css");
+const imagemin = require("gulp-imagemin");
+const sourcemaps = require("gulp-sourcemaps");
+const nunjucksRender = require("gulp-nunjucks-render");
+const newer = require("gulp-newer");
+const webp = require("gulp-webp");
+const fonter = require("gulp-fonter");
+const ttf2woff2 = require("gulp-ttf2woff2");
+const cssnano = require("gulp-cssnano");
+const cleanCss = require("gulp-clean-css");
 const del = require("del");
 const pug = require("gulp-pug");
 const browserSync = require("browser-sync").create();
 const fileInclude = require("gulp-file-include");
 const replace = require("gulp-replace");
 
-function browsersync() {
-  browserSync.init({
-    server: {
-      baseDir: "src/",
-    },
-    notify: false,
-  });
-}
+const srcPath = "src/"; //папка с исходниками
+const distPath = "marcho/"; //название репозитория готового проекта
 
-function styles() {
-  return (
-    src("src/scss/style.scss")
-      .pipe(scss.sync({ outputStyle: "compressed" }).on("error", scss.logError))
-      .pipe(scss({ outputStyle: "compressed" }))
-      .pipe(cleancss({ level: 2 }))
-      .pipe(concat("style.min.css"))
-      .pipe(autoprefixer({
-          cascade: false,
-          overrideBrowserslist: ["last 10 versions"],
-          grid: true,
-        })
-      )
-      .pipe(groupCssMediaQueries())
-      .pipe(dest("src/css"))
-      .pipe(browserSync.stream())
-  );
+function webpImg() {
+  return src("src/img/**/*").pipe(webp()).pipe(dest("src/img"));
+}
+function images() {
+  return src("src/img/**/*")
+    .pipe(
+      imagemin([
+        imagemin.gifsicle({
+          interlaced: true,
+        }),
+        imagemin.mozjpeg({
+          quality: 75,
+          progressive: true,
+        }),
+        imagemin.optipng({
+          optimizationLevel: 5,
+        }),
+        imagemin.svgo({
+          plugins: [
+            {
+              removeViewBox: true,
+            },
+            {
+              cleanupIDs: false,
+            },
+          ],
+        }),
+      ])
+    )
+    .pipe(dest("src/img"));
+}
+function fonts() {
+  return src("src/font/*.*")
+    .pipe(
+      fonter({
+        formats: ["ttf", "otf", "eot", "woff", "svg"],
+      })
+    )
+    .pipe(ttf2woff2())
+    .pipe(dest("src/font"));
 }
 
 function scripts() {
@@ -55,100 +82,119 @@ function scripts() {
     "node_modules/jquery-form-styler/dist/jquery.formstyler.js",
     "src/js/main.js",
   ])
+    .pipe(sourcemaps.init())
     .pipe(concat("main.min.js"))
     .pipe(uglify())
+    .pipe(sourcemaps.write())
     .pipe(dest("src/js"))
     .pipe(browserSync.stream());
 }
-
-function images() {
-  return src("src/img/**/**")
+// function styles() {
+//   return src("src/scss/style.scss")
+//     .pipe(sass())
+//     .pipe(autoprefixer())
+//     .pipe(cssbeautify())
+//     .pipe(dest("src/css"))
+//     .pipe(
+//       cssnano({
+//         zindex: false,
+//         discardComments: {
+//           removeAll: true,
+//         },
+//       })
+//     )
+//     .pipe(removeComments())
+//     .pipe(
+//       rename({
+//         suffix: ".min",
+//         extname: ".css",
+//       })
+//     )
+//     .pipe(dest("src/css"))
+//     .pipe(browserSync.reload({ stream: true }));
+// }
+function styles() {
+  return src("src/scss/*.scss")
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(dest("src/css"))
+    .pipe(scss({ outputStyle: "compressed" }))
+    .pipe(rename({ suffix: ".min" }))
     .pipe(
-      imagemin()
-      // [
-      //   imagemin.gifsicle({ interlaced: true }),
-      //   imagemin.mozjpeg({ quality: 75, progressive: true }),
-      //   imagemin.optipng({ optimizationLevel: 5 }),
-      //   imagemin.svgo({
-      //     plugins: [
-      //       { removeViewBox: true },
-      //       { cleanupIDs: false }
-      //     ]
-      //   })
-      // ]
-    )
-    .pipe(dest("dist/img")); //название репозитория готового проекта
-}
-
-function pugs() {
-  return src("src/*.pug")
-    .pipe(
-      pug({
-        pretty: true,
+      autoprefixer({
+        // cascade: false,
+        overrideBrowserslist: ["last 10 versions"],
+        grid: true,
       })
     )
-    .pipe(dest("src"));
-}
-
-const htmlInclude = () => {
-  return src(["src/html/*.html"]) // Находит любой .html файл в папке "html", куда будем подключать другие .html файлы
     .pipe(
-      fileInclude({
-        prefix: "@",
-        basepath: "@file",
+      cleanCss({
+        compatibility: "ie8",
+        level: 2,
       })
     )
-    .pipe(dest("src")) // указываем, в какую папку поместить готовый файл html
-    .pipe(browserSync.stream());
-};
+    .pipe(sourcemaps.write())
+    .pipe(dest("src/css"))
+    .pipe(browserSync.reload({ stream: true }));
+}
+function html() {
+  return (
+    src(["src/html/*.html", "src/*.njk", "src/*.pug"])
+      .pipe(sourcemaps.init())
+      // .pipe(nunjucksRender()) //раскоментировать при работе с .njk
+      // .pipe(pug({pretty: true})) //раскоментировать при работе с .pug
+      .pipe(fileInclude({ prefix: "@", basepath: "@file" })) //раскоментировать приработе с .html
+      .pipe(sourcemaps.write())
+      .pipe(dest("src"))
+      .pipe(browserSync.reload({ stream: true }))
+  );
+}
 
+
+function browsersync() {
+  browserSync.init({
+    server: {
+      baseDir: "src/",
+    },
+    notify: false,
+  });
+}
 function build() {
   return src(
     [
-      // 'src/**/*.html',
       "src/*.html",
-      "src/pages/*.html", //
-      // 'src/**/*.min.html',
-      "src/*.min.html",
-      "src/video/",
-      "src/css/style.min.css",
+      "src/css/*.css",
+      "src/js/*.js",
+      "src/video/*.*",
+      "src/img/**/*.*",
       "src/fonts/*.woff",
       "src/fonts/*.woff2",
-      "src/js/main.min.js",
     ],
     {
-      base: "src",
+      base: srcPath,
     }
-  ).pipe(dest("dist")); //название репозитория готового проекта
+  ).pipe(dest(distPath));
 }
-
 function cleanDist() {
-  return del("dist"); //название репозитория готового проекта
+  return del(distPath); //название репозитория готового проекта
 }
-
 function watching() {
+  watch(["src/html/**/*.*"], html);
   watch(["src/scss/**/*.scss"], styles);
-  watch(["src/**/*.pug"], pugs);
   watch(["src/js/**/*.js", "!src/js/main.min.js"], scripts);
   watch(["src/*.html"]).on("change", browserSync.reload);
-  watch(["src/pages/*.html"]).on("change", browserSync.reload); //
-  watch(["src/html/**/*.html"], htmlInclude);
 }
 
 exports.styles = styles;
 exports.scripts = scripts;
 exports.browsersync = browsersync;
-exports.watching = watching;
+exports.webpImg = webpImg;
 exports.images = images;
+exports.fonts = fonts;
+exports.watching = watching;
 exports.cleanDist = cleanDist;
-exports.htmlInclude = htmlInclude;
-exports.pugs = pugs;
-exports.build = series(cleanDist, images, build); //gulp build
-exports.default = parallel(
-  pugs,
-  htmlInclude,
-  styles,
-  scripts,
-  browsersync,
-  watching
-); //gulp
+exports.html = html;
+
+exports.build = series(cleanDist, webpImg, images, build); //gulp build
+
+exports.default = parallel(html, styles, scripts, browsersync, watching); //gulp

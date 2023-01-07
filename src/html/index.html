@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('path/head.html',{"title":"Marcho | Home"})
+@include('../modules/head/head.html',{"title":"Marcho | Home"})
 
 <body>
-  @include('path/header/header-home.html')
+  @include('../modules/header/header-home.html')
   <main class="main">
-    @include('path/hero.html')
-    @include('path/category.html')
-    @include('path/fashion.html')
-    @include('path/products.html')
-    @include('path/promo.html')
-    @include('path/blog.html')
+    @include('../modules/hero/hero.html')
+    @include('../modules/category/category.html')
+    @include('../modules/fashion/fashion.html')
+    @include('../modules/products/products.html')
+    @include('../modules/promo/promo.html')
+    @include('../modules/blog/blog.html')
   </main>
-  @include('path/footer.html')
+ @include('../modules/footer/footer.html')
+ <!-- {% include 'src/modules/footer/footer.html' %}  .njk -->
 <script src="js/main.min.js"></script>
 </body>
 

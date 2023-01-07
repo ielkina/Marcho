@@ -1,5 +1,4 @@
 "use strict";
-
 $(".comments-form__btn").click(function () {
   $("form")[0].reset();
 });
@@ -35,7 +34,6 @@ $(function () {
     nextArrow:
       '<button class="next-arrow"><svg class="icon" style="width: 10px;height: 15px;"><use xlink:href="img/icons/sprite.svg#play"></use></svg></button> ',
   });
-
   $(".shop-content__filter-btn").on("click", function () {
     $(".shop-content__filter-btn").removeClass(
       "shop-content__filter-btn--active"
@@ -48,9 +46,7 @@ $(function () {
   $(".button-grid").on("click", function () {
     $(".product-item").removeClass("product-item--list");
   });
-
   $(".select-style, .product-one__num").styler();
-
   $(".filter-price__input").ionRangeSlider({
     type: "double",
     min: 0,
@@ -67,7 +63,6 @@ $(function () {
       $(".filter-price__to").text(data.to);
     },
   });
-
   $(".slider").slick({
     dots: true,
     arrows: false,
@@ -107,7 +102,6 @@ $(function () {
       ' <use xlink:href="img/icons/sprite.svg#icon-star"></use>' +
       "</svg>",
   });
-
   function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());
     const seconds = Math.floor((total / 1000) % 60);
@@ -123,7 +117,6 @@ $(function () {
       seconds,
     };
   }
-
   function initializeClock(id, endtime) {
     const clock = document.querySelector(".promo__clock");
     const daysSpan = clock.querySelector(".promo__clock-days");
@@ -147,10 +140,8 @@ $(function () {
     updateClock();
     const timeinterval = setInterval(updateClock, 1000);
   }
-
   // const deadline = new Date(Date.parse(new Date()) + 29 * 24 * 60 * 60 * 1000);//1 вариант
   // const deadline = '2022-12-31'; //2 вариант дата окончания акции
   const deadline = $(".promo__clock").attr("data-time"); //3 вариант дата окончания акции c html
   initializeClock("promo__clock", deadline);
-  
 });
