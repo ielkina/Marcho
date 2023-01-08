@@ -27,8 +27,22 @@ const replace = require("gulp-replace");
 const srcPath = "src/"; //папка с исходниками
 const distPath = "marcho/"; //название репозитория готового проекта
 
+function browsersync() {
+  browserSync.init({
+    server: {
+      baseDir: "src/",
+    },
+    notify: false,
+  });
+}
+function cleanStyle() {
+  return src("src/css/*.css")
+    .pipe(removeComments())
+    .pipe(cssnano())
+    .pipe(dest('src/css'));
+}
 function webpImg() {
-  return src("src/img/**/*").pipe(webp()).pipe(dest("src/img"));
+  return src("src/img/**/*").pipe(webp()).pipe(dest('src/img'));
 }
 function images() {
   return src("src/img/**/*")
@@ -68,7 +82,6 @@ function fonts() {
     .pipe(ttf2woff2())
     .pipe(dest("src/font"));
 }
-
 function scripts() {
   return src([
     "node_modules/jquery/dist/jquery.js",
@@ -89,53 +102,25 @@ function scripts() {
     .pipe(dest("src/js"))
     .pipe(browserSync.stream());
 }
-// function styles() {
-//   return src("src/scss/style.scss")
-//     .pipe(sass())
-//     .pipe(autoprefixer())
-//     .pipe(cssbeautify())
-//     .pipe(dest("src/css"))
-//     .pipe(
-//       cssnano({
-//         zindex: false,
-//         discardComments: {
-//           removeAll: true,
-//         },
-//       })
-//     )
-//     .pipe(removeComments())
-//     .pipe(
-//       rename({
-//         suffix: ".min",
-//         extname: ".css",
-//       })
-//     )
-//     .pipe(dest("src/css"))
-//     .pipe(browserSync.reload({ stream: true }));
-// }
 function styles() {
-  return src("src/scss/*.scss")
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(dest("src/css"))
-    .pipe(scss({ outputStyle: "compressed" }))
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(
-      autoprefixer({
-        // cascade: false,
-        overrideBrowserslist: ["last 10 versions"],
-        grid: true,
-      })
-    )
-    .pipe(
-      cleanCss({
-        compatibility: "ie8",
-        level: 2,
-      })
-    )
-    .pipe(sourcemaps.write())
-    .pipe(dest("src/css"))
-    .pipe(browserSync.reload({ stream: true }));
+  return (
+    src("src/scss/*.scss")
+      .pipe(sourcemaps.init())
+      .pipe(sass())
+      .pipe(dest("src/css"))
+      .pipe(scss({ outputStyle: "compressed" }))
+      .pipe(rename({ suffix: ".min" }))
+      .pipe(
+        autoprefixer({
+          cascade: false,
+          overrideBrowserslist: ["last 10 versions"],
+          grid: true,
+        })
+      )
+      .pipe(sourcemaps.write())
+      .pipe(dest("src/css"))
+      .pipe(browserSync.reload({ stream: true }))
+  );
 }
 function html() {
   return (
@@ -148,16 +133,6 @@ function html() {
       .pipe(dest("src"))
       .pipe(browserSync.reload({ stream: true }))
   );
-}
-
-
-function browsersync() {
-  browserSync.init({
-    server: {
-      baseDir: "src/",
-    },
-    notify: false,
-  });
 }
 function build() {
   return src(
@@ -180,8 +155,11 @@ function cleanDist() {
 }
 function watching() {
   watch(["src/html/**/*.*"], html);
+  watch(["src/modules/**/*.*"], html);
   watch(["src/scss/**/*.scss"], styles);
+  watch(["src/modules/**/*.scss"], styles);
   watch(["src/js/**/*.js", "!src/js/main.min.js"], scripts);
+  watch(["src/modules/**/*.js", "!src/js/main.min.js"], scripts);
   watch(["src/*.html"]).on("change", browserSync.reload);
 }
 
@@ -190,11 +168,12 @@ exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.webpImg = webpImg;
 exports.images = images;
+exports.cleanStyle = cleanStyle;
 exports.fonts = fonts;
 exports.watching = watching;
 exports.cleanDist = cleanDist;
 exports.html = html;
 
-exports.build = series(cleanDist, webpImg, images, build); //gulp build
+exports.build = series(cleanDist, cleanStyle, webpImg, images, build); //gulp build
 
 exports.default = parallel(html, styles, scripts, browsersync, watching); //gulp

@@ -1,23 +1,169 @@
-// @include font-face(Rubik, Rubik-Light, 300);
-// @include font-face(Rubik, Rubik-Regular, 400);
-// @include font-face(Rubik, Rubik-Italic, 400);
-// @include font-face(Rubik, Rubik-Medium, 500);
-// @include font-face(Rubik, Rubik-Bold, 700);
+$rubik: "Rubik",
+sans-serif;
+$opensans: "Open Sans",
+sans-serif;
+$dmsans: "DMSans",
+sans-serif;
+$poppins: "Poppins",
+sans-serif;
+$roboto: "Roboto",
+sans-serif;
+$quicksand: "Quicksand",
+sans-serif;
+$myriadpro: "MyriadPro",
+sans-serif;
 
-// @include font-face(OpenSans, OpenSans-Light, 300);
-// @include font-face(OpenSans, OpenSans-Regular, 400);
-// @include font-face(OpenSans, OpenSans-Medium, 500);
-// @include font-face(OpenSans, OpenSans-SemiBold, 600);
-// @include font-face(OpenSans, OpenSans-Bold, 700);
+@mixin font-face($font-family, $url, $weight) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('../font/#{$url}.woff2') format('woff2'),
+    url('../font/#{$url}.woff') format('woff');
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: normal;
+  }
+}
+@mixin rubik-100($font-size) {
+  font-family: $rubik;
+  font-weight: 100;
+  font-size: #{$font-size}px;
+}
+@mixin rubik-200($font-size) {
+  font-family: $rubik;
+  font-weight: 200;
+  font-size: #{$font-size}px;
+}
+@mixin rubik-300($font-size) {
+  font-family: $rubik;
+  font-weight: 300;
+  font-size: #{$font-size}px;
+}
+@mixin rubik-400($font-size) {
+  font-family: $rubik;
+  font-weight: 400;
+  font-size: #{$font-size}px;
+}
+@mixin rubik-500($font-size) {
+  font-family: $rubik;
+  font-weight: 500;
+  font-size: #{$font-size}px;
+}
+@mixin rubik-600($font-size) {
+  font-family: $rubik;
+  font-weight: 600;
+  font-size: #{$font-size}px;
+}
+@mixin rubik-700($font-size) {
+  font-family: $rubik;
+  font-weight: 700;
+  font-size: #{$font-size}px;
+}
+@mixin rubik-800($font-size) {
+  font-family: $rubik;
+  font-weight: 800;
+  font-size: #{$font-size}px;
+}
+@mixin rubik-900($font-size) {
+  font-family: $rubik;
+  font-weight: 900;
+  font-size: #{$font-size}px;
+}
+@mixin rubik-950($font-size) {
+  font-family: $rubik;
+  font-weight: 950;
+  font-size: #{$font-size}px;
+}
+//использование миксина 
+// @include rubik-100(10); //(10) размер шрифта в пикселях 
 
-// @include font-face(Quicksand, Quicksand-Light, 300);
+@include font-face(Quicksand, Quicksand-Light, 300);
 @include font-face(Quicksand, Quicksand-Regular, 400);
 @include font-face(Quicksand, Quicksand-Medium, 500);
-// @include font-face(Quicksand, Quicksand-SemiBold, 600);
-// @include font-face(Quicksand, Quicksand-Bold, 700);
+@include font-face(Quicksand, Quicksand-SemiBold, 600);
+@include font-face(Quicksand, Quicksand-Bold, 700);
 
-// @include font-face(Roboto, Roboto-Light, 300);
+@include font-face(Roboto, Roboto-Light, 300);
 @include font-face(Roboto, Roboto-Regular, 400);
 @include font-face(Roboto, Roboto-Medium, 500);
-// @include font-face(Roboto, Roboto-SemiBold, 600);
+@include font-face(Roboto, Roboto-SemiBold, 600);
 @include font-face(Roboto, Roboto-Bold, 700);
+
+// @include font-face(Rubik, Rubik-Thin, 100);
+// @include font-face(Rubik, Rubik-Thin-Italic, 100);
+// @include font-face(Rubik, Rubik-ExtraLight, 200);
+// @include font-face(Rubik, Rubik-ExtraLight-Italic, 200);
+// @include font-face(Rubik, Rubik-Light, 300);
+// @include font-face(Rubik, Rubik-Light-Italic, 300);
+// @include font-face(Rubik, Rubik-Regular, 400);
+// @include font-face(Rubik, Rubik-Regular-Italic, 400);
+// @include font-face(Rubik, Rubik-Medium, 500);
+// @include font-face(Rubik, Rubik-Medium-Italic, 500);
+// @include font-face(Rubik, Rubik-SemiBold, 600);
+// @include font-face(Rubik, Rubik-SemiBold-Italic, 600);
+// @include font-face(Rubik, Rubik-Bold, 700);
+// @include font-face(Rubik, Rubik-Bold-Italic, 700);
+// @include font-face(Rubik, Rubik-ExtraBold, 800);
+// @include font-face(Rubik, Rubik-ExtraBold-Italic, 800);
+// @include font-face(Rubik, Rubik-Black, 900);
+// @include font-face(Rubik, Rubik-Black-Italic, 900);
+// @include font-face(Rubik, Rubik-ExtraBlack-Italic, 950);
+
+// @include font-face(Open Sans, Open Sans-Thin, 100);
+// @include font-face(Open Sans, Open Sans-Thin-Italic, 100);
+// @include font-face(Open Sans, Open Sans-ExtraLight, 200);
+// @include font-face(Open Sans, Open Sans-ExtraLight-Italic, 200);
+// @include font-face(Open Sans, Open Sans-Light, 300);
+// @include font-face(Open Sans, Open Sans-Light-Italic, 300);
+// @include font-face(Open Sans, Open Sans-Regular, 400);
+// @include font-face(Open Sans, Open Sans-Regular-Italic, 400);
+// @include font-face(Open Sans, Open Sans-Medium, 500);
+// @include font-face(Open Sans, Open Sans-Medium-Italic, 500);
+// @include font-face(Open Sans, Open Sans-SemiBold, 600);
+// @include font-face(Open Sans, Open Sans-SemiBold-Italic, 600);
+// @include font-face(Open Sans, Open Sans-Bold, 700);
+// @include font-face(Open Sans, Open Sans-Bold-Italic, 700);
+// @include font-face(Open Sans, Open Sans-ExtraBold, 800);
+// @include font-face(Open Sans, Open Sans-ExtraBold-Italic, 800);
+// @include font-face(Open Sans, Open Sans-Black, 900);
+// @include font-face(Open Sans, Open Sans-Black-Italic, 900);
+// @include font-face(Open Sans, Open Sans-ExtraBlack-Italic, 950);
+
+// @include font-face(DMSans, DMSans-Thin, 100);
+// @include font-face(DMSans, DMSans-Thin-Italic, 100);
+// @include font-face(DMSans, DMSans-ExtraLight, 200);
+// @include font-face(DMSans, DMSans-ExtraLight-Italic, 200);
+// @include font-face(DMSans, DMSans-Light, 300);
+// @include font-face(DMSans, DMSans-Light-Italic, 300);
+// @include font-face(DMSans, DMSans-Regular, 400);
+// @include font-face(DMSans, DMSans-Regular-Italic, 400);
+// @include font-face(DMSans, DMSans-Medium, 500);
+// @include font-face(DMSans, DMSans-Medium-Italic, 500);
+// @include font-face(DMSans, DMSans-SemiBold, 600);
+// @include font-face(DMSans, DMSans-SemiBold-Italic, 600);
+// @include font-face(DMSans, DMSans-Bold, 700);
+// @include font-face(DMSans, DMSans-Bold-Italic, 700);
+// @include font-face(DMSans, DMSans-ExtraBold, 800);
+// @include font-face(DMSans, DMSans-ExtraBold-Italic, 800);
+// @include font-face(DMSans, DMSans-Black, 900);
+// @include font-face(DMSans, DMSans-Black-Italic, 900);
+// @include font-face(DMSans, DMSans-ExtraBlack-Italic, 950);
+
+// @include font-face(Poppins, Poppins-Thin, 100);
+// @include font-face(Poppins, Poppins-Thin-Italic, 100);
+// @include font-face(Poppins, Poppins-ExtraLight, 200);
+// @include font-face(Poppins, Poppins-ExtraLight-Italic, 200);
+// @include font-face(Poppins, Poppins-Light, 300);
+// @include font-face(Poppins, Poppins-Light-Italic, 300);
+// @include font-face(Poppins, Poppins-Regular, 400);
+// @include font-face(Poppins, Poppins-Regular-Italic, 400);
+// @include font-face(Poppins, Poppins-Medium, 500);
+// @include font-face(Poppins, Poppins-Medium-Italic, 500);
+// @include font-face(Poppins, Poppins-SemiBold, 600);
+// @include font-face(Poppins, Poppins-SemiBold-Italic, 600);
+// @include font-face(Poppins, Poppins-Bold, 700);
+// @include font-face(Poppins, Poppins-Bold-Italic, 700);
+// @include font-face(Poppins, Poppins-ExtraBold, 800);
+// @include font-face(Poppins, Poppins-ExtraBold-Italic, 800);
+// @include font-face(Poppins, Poppins-Black, 900);
+// @include font-face(Poppins, Poppins-Black-Italic, 900);
+// @include font-face(Poppins, Poppins-ExtraBlack-Italic, 950);
