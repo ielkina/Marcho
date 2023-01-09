@@ -1,0 +1,25 @@
+// libs
+// @import '../../node_modules/slick-carousel/slick/slick.scss';
+// @import '../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox';
+// @import '../../node_modules/rateyo/src/jquery.rateyo';
+// @import '../../node_modules/ion-rangeslider/css/ion.rangeSlider';
+// @import '../../node_modules/jquery-form-styler/dist/jquery.formstyler';
+// @import '../../node_modules/jquery-form-styler/dist/jquery.formstyler.theme';
+
+$bg: #fff;
+$bg-footer: #f6f6f6;
+$text: #8d8d8d;
+$title: #29282d;
+$accent: #fe3e57;
+$btn-box-shadow: #ff11304d;
+$input-box-shadow: #c0c0c04d;
+$border: #ececec;
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+

@@ -2,47 +2,44 @@ const { src, dest, watch, parallel, series } = require("gulp");
 
 const scss = require("gulp-sass")(require("sass"));
 const sass = require("gulp-sass")(require("sass"));
-const cssbeautify = require("gulp-cssbeautify");
-const rename = require("gulp-rename");
+const rename = require("gulp-rename"); //
 const concat = require("gulp-concat");
-const removeComments = require("gulp-strip-css-comments");
-const autoprefixer = require("gulp-autoprefixer");
-const groupCssMediaQueries = require("gulp-group-css-media-queries");
+const removeComments = require("gulp-strip-css-comments"); //удаление комментариев в файле стилей
+const autoprefixer = require("gulp-autoprefixer"); 
 const uglify = require("gulp-uglify");
-const imagemin = require("gulp-imagemin");
-const sourcemaps = require("gulp-sourcemaps");
-const nunjucksRender = require("gulp-nunjucks-render");
-const newer = require("gulp-newer");
-const webp = require("gulp-webp");
-const fonter = require("gulp-fonter");
-const ttf2woff2 = require("gulp-ttf2woff2");
-const cssnano = require("gulp-cssnano");
-const cleanCss = require("gulp-clean-css");
+const groupCssMediaQueries = require("gulp-group-css-media-queries");//объединять все идентичные селекторы в один
+const imagemin = require("gulp-imagemin"); //сжатие картинок
+const sourcemaps = require("gulp-sourcemaps"); 
+const webp = require("gulp-webp"); //конвертация картинок в webp формат
+const fonter = require("gulp-fonter"); //конвертация шрифта
+const ttf2woff2 = require("gulp-ttf2woff2"); //конвертация шрифта в woff2 формат
+const cssnano = require("gulp-cssnano"); //сжатие файла стиля
 const del = require("del");
+const browserSync = require("browser-sync").create(); //слежение за файлами
 const pug = require("gulp-pug");
-const browserSync = require("browser-sync").create();
+const nunjucksRender = require("gulp-nunjucks-render"); 
 const fileInclude = require("gulp-file-include");
-const replace = require("gulp-replace");
 
 const srcPath = "src/"; //папка с исходниками
-const distPath = "marcho/"; //название репозитория готового проекта
+const distPath = "marcho/"; //название репозитория готового проекта изменить на нужное название
 
 function browsersync() {
   browserSync.init({
     server: {
-      baseDir: "src/",
+      baseDir: srcPath, //слежение за файлами в папке исходников
+      // baseDir: distPath, //слежение за файлами в папке проекта
     },
-    notify: false,
+    notify: false, //удаление всплывающего окна при обновлении
   });
 }
+
 function cleanStyle() {
   return src("src/css/*.css")
     .pipe(removeComments())
-    .pipe(cssnano())
-    .pipe(dest('src/css'));
+    .pipe(dest("src/css"));
 }
 function webpImg() {
-  return src("src/img/**/*").pipe(webp()).pipe(dest('src/img'));
+  return src("src/img/**/*").pipe(webp()).pipe(dest("src/img"));
 }
 function images() {
   return src("src/img/**/*")
@@ -107,8 +104,9 @@ function styles() {
     src("src/scss/*.scss")
       .pipe(sourcemaps.init())
       .pipe(sass())
+      .pipe(groupCssMediaQueries())
       .pipe(dest("src/css"))
-      .pipe(scss({ outputStyle: "compressed" }))
+      .pipe(scss({ outputStyle: "compressed" }).on("error", scss.logError))
       .pipe(rename({ suffix: ".min" }))
       .pipe(
         autoprefixer({
@@ -118,6 +116,7 @@ function styles() {
         })
       )
       .pipe(sourcemaps.write())
+      // .pipe(dest(distPath + "/css"))//выгрузка файла в папку проекта
       .pipe(dest("src/css"))
       .pipe(browserSync.reload({ stream: true }))
   );
@@ -128,7 +127,7 @@ function html() {
       .pipe(sourcemaps.init())
       // .pipe(nunjucksRender()) //раскоментировать при работе с .njk
       // .pipe(pug({pretty: true})) //раскоментировать при работе с .pug
-      .pipe(fileInclude({ prefix: "@", basepath: "@file" })) //раскоментировать приработе с .html
+      .pipe(fileInclude({ prefix: "@", basepath: "@file" })) //раскоментировать при работе с .html
       .pipe(sourcemaps.write())
       .pipe(dest("src"))
       .pipe(browserSync.reload({ stream: true }))
@@ -155,11 +154,8 @@ function cleanDist() {
 }
 function watching() {
   watch(["src/html/**/*.*"], html);
-  watch(["src/modules/**/*.*"], html);
   watch(["src/scss/**/*.scss"], styles);
-  watch(["src/modules/**/*.scss"], styles);
   watch(["src/js/**/*.js", "!src/js/main.min.js"], scripts);
-  watch(["src/modules/**/*.js", "!src/js/main.min.js"], scripts);
   watch(["src/*.html"]).on("change", browserSync.reload);
 }
 

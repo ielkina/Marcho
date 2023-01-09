@@ -23,6 +23,9 @@ sans-serif;
     font-style: normal;
   }
 }
+//использование миксина
+// @include font-face(Quicksand, Quicksand-Light, 300);
+
 @mixin rubik-100($font-size) {
   font-family: $rubik;
   font-weight: 100;

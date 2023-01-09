@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('../modules/head/head.html',{"title":"Marcho | 404"})
+@include('path/head.html',{"title":"Marcho | 404"})
 
 <body>
-  @include('../modules/header/header-404.html')
+  @include('path/header-404.html')
   <main class="main">
-    @include('../modules/404/404-page.html')
+    <!-- @include('path/404-page.html') -->
   </main>
-  @include('../modules/footer/footer.html')
+  @include('path/footer.html')
   <script src="js/main.min.js"></script>
 </body>
 

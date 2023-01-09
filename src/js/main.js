@@ -2,7 +2,15 @@
 $(".comments-form__btn").click(function () {
   $("form")[0].reset();
 });
+
 $(function () {
+  $(".footer-top__title").on("click", function () {
+    $(this).siblings().slideToggle();
+    $(this).toggleClass("active");
+  });
+  $(".menu__btn").on("click", function () {
+    $(".menu__list").toggleClass("menu__list--active");
+  });
   $(".product-tabs__top-item").on("click", function (e) {
     e.preventDefault();
     $(".product-tabs__top-item").removeClass("product-tabs__top-item--active");
@@ -102,6 +110,7 @@ $(function () {
       ' <use xlink:href="img/icons/sprite.svg#icon-star"></use>' +
       "</svg>",
   });
+
   function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());
     const seconds = Math.floor((total / 1000) % 60);
@@ -117,6 +126,7 @@ $(function () {
       seconds,
     };
   }
+
   function initializeClock(id, endtime) {
     const clock = document.querySelector(".promo__clock");
     const daysSpan = clock.querySelector(".promo__clock-days");

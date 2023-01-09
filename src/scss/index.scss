@@ -1,37 +1,29 @@
-@import 'vars';
-@import 'mixin';
-@import 'fonts';
-@import 'reset';
+@import '0-vars';
+@import '1-mixin';
+@import '2-fonts';
 // ----------------------------------
-@import 'global';
-@import 'extend';
+@import '3-reset';
+@import '4-global';
+@import '5-extend';
 // -----------------------------------------
-// libs
-@import '../../node_modules/slick-carousel/slick/slick.scss';
-@import '../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox';
-@import '../../node_modules/rateyo/src/jquery.rateyo';
-@import '../../node_modules/ion-rangeslider/css/ion.rangeSlider';
-@import '../../node_modules/jquery-form-styler/dist/jquery.formstyler';
-// @import '../../node_modules/jquery-form-styler/dist/jquery.formstyler.theme';
-// ------------------------------------------
-@import '../modules/header/header';
-@import '../modules/top/top';
+@import 'path/header';
+// @import 'path/top';
 // ---------------------------------------------
-@import "../modules/login/login";
-@import '../modules/404/404-page';
+// @import "path/login";
+// @import 'path/404-page';
 // -----------------------------------------------
-@import '../modules/hero/hero';
-@import '../modules/category/category';
-@import '../modules/fashion/fashion';
-@import '../modules/products/products';
-@import '../modules/promo/promo';
-@import '../modules/blog/blog';
+// @import 'path/hero';
+// @import 'path/category';
+// @import 'path/fashion';
+// @import 'path/products';
+// @import 'path/promo';
+// @import 'path/blog';
 // ---------------------------------------------
-@import '../modules/shop/shop';
-@import '../modules/products/product-page';
-@import '../modules/products/related';
-@import '../modules/blog/blog-page';
-@import '../modules/blog/blog-detal';
-@import '../modules/contact/contact';
+// @import 'path/shop';
+// @import 'path/product-page';
+// @import 'path/related';
+// @import 'path/blog-page';
+// @import 'path/blog-detal';
+// @import 'path/contact';
 // ------------------------------------------------
-@import '../modules/footer/footer';
+@import 'path/footer';

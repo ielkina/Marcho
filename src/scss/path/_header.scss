@@ -1,0 +1,217 @@
+.header {
+  &__wrapper {
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include r(1200) {
+      padding-right: 10px;
+    }
+
+    @include r(860) {
+      // padding: 20px 0;
+    }
+
+    @include r(500) {
+      padding-right: 0px;
+    }
+  }
+}
+
+.header--bg {
+  background-color: $bg-footer;
+}
+
+.menu {
+  @include r(860) {
+    order: 1;
+    margin-left: 20px;
+  }
+
+  @include r(500) {
+    order: 0;
+  }
+
+  &__btn {
+    display: none;
+
+    @include r(860) {
+      width: 30px;
+      height: 22px;
+      border: 0;
+      cursor: pointer;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      & span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #29282d;
+      }
+
+      &::after,
+      &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 3px;
+        background-color: #29282d;
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+
+    @include r(860) {
+      transform: translateY(-200%);
+      position: absolute;
+      background-color: #fff;
+      top: 120px;
+      width: 100%;
+      height: 100vh;
+      left: 0;
+      flex-direction: column;
+      align-items: center;
+      z-index: 5;
+      transition: all 0.5s ease-in-out;
+    }
+
+    @include r(500) {
+      top: 140px;
+    }
+  }
+
+  &__list--active {
+    @include r(860) {
+      transform: translateY(0%);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  &__list-item {
+    @include r(860) {
+      width: 100%;
+      // padding: 0 15px;
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      margin-right: 35px;
+
+      @include r(860) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__list-link {
+    @extend %roboto-400;
+    text-transform: uppercase;
+    padding: 0 2px 1px;
+    color: $title;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      font-weight: 700;
+      color: $accent;
+      box-shadow: 0px 2px 0px 0px $accent;
+    }
+
+    @include r(860) {
+      width: 100%;
+      padding: 12px 0;
+      display: block;
+    }
+  }
+
+  &__list-link--active {
+    font-weight: 700;
+    color: $accent;
+    box-shadow: 0px 2px 0px 0px $accent;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.user-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 18px;
+  transition: all 0.3s ease-in-out;
+
+  @include r(860) {
+    margin-left: auto;
+  }
+
+  @include r(500) {
+    width: 100%;
+    margin-top: 30px;
+    // justify-content: flex-end;
+    padding-right: 15px;
+  }
+
+  &__item {
+
+    &:not(:last-child) {
+      margin-right: 25px;
+      // @include r(860){
+      //   padding-right: 0;
+      // }
+    }
+  }
+
+  &__icon {
+    width: 23px;
+    height: 20px;
+    fill: $title;
+    transition: fill 0.3s ease-in-out;
+
+    &:hover {
+      fill: $accent;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    &:hover {
+      & .user-nav__num {
+        color: $accent;
+        background-color: $bg;
+        border: 1px solid $accent;
+      }
+    }
+  }
+
+  &__num {
+    position: absolute;
+    font-size: 12px;
+    color: $bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-color: $accent;
+    top: -16px;
+    right: -14px;
+    transition: all 0.3s ease-in-out;
+  }
+}
