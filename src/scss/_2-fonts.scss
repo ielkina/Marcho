@@ -1,17 +1,18 @@
-$rubik: "Rubik",
-sans-serif;
-$opensans: "Open Sans",
-sans-serif;
-$dmsans: "DMSans",
-sans-serif;
-$poppins: "Poppins",
-sans-serif;
-$roboto: "Roboto",
-sans-serif;
-$quicksand: "Quicksand",
-sans-serif;
-$myriadpro: "MyriadPro",
-sans-serif;
+$sans-serif: sans-serif;
+$serif: serif;
+//безопасные шрифты
+$helvetica: 'Helvetica';
+$arial: 'Arial';
+$verdata: 'Verdana';
+//шрифты по макету
+$rubik: "Rubik";
+$opensans: "Open Sans";
+$dmsans: "DMSans";
+$poppins: "Poppins";
+$roboto: "Roboto";
+$quicksand: "Quicksand";
+$myriadpro: "MyriadPro";
+
 
 @mixin font-face($font-family, $url, $weight) {
   @font-face {
@@ -23,61 +24,19 @@ sans-serif;
     font-style: normal;
   }
 }
+
 //использование миксина
 // @include font-face(Quicksand, Quicksand-Light, 300);
 
 @mixin rubik-100($font-size) {
-  font-family: $rubik;
+  font-family: $rubik, $arial, $helvetica, $sans-serif;
   font-weight: 100;
   font-size: #{$font-size}px;
 }
-@mixin rubik-200($font-size) {
-  font-family: $rubik;
-  font-weight: 200;
-  font-size: #{$font-size}px;
-}
-@mixin rubik-300($font-size) {
-  font-family: $rubik;
-  font-weight: 300;
-  font-size: #{$font-size}px;
-}
-@mixin rubik-400($font-size) {
-  font-family: $rubik;
-  font-weight: 400;
-  font-size: #{$font-size}px;
-}
-@mixin rubik-500($font-size) {
-  font-family: $rubik;
-  font-weight: 500;
-  font-size: #{$font-size}px;
-}
-@mixin rubik-600($font-size) {
-  font-family: $rubik;
-  font-weight: 600;
-  font-size: #{$font-size}px;
-}
-@mixin rubik-700($font-size) {
-  font-family: $rubik;
-  font-weight: 700;
-  font-size: #{$font-size}px;
-}
-@mixin rubik-800($font-size) {
-  font-family: $rubik;
-  font-weight: 800;
-  font-size: #{$font-size}px;
-}
-@mixin rubik-900($font-size) {
-  font-family: $rubik;
-  font-weight: 900;
-  font-size: #{$font-size}px;
-}
-@mixin rubik-950($font-size) {
-  font-family: $rubik;
-  font-weight: 950;
-  font-size: #{$font-size}px;
-}
+
 //использование миксина 
 // @include rubik-100(10); //(10) размер шрифта в пикселях 
+
 
 @include font-face(Quicksand, Quicksand-Light, 300);
 @include font-face(Quicksand, Quicksand-Regular, 400);

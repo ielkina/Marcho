@@ -5,19 +5,23 @@ const sass = require("gulp-sass")(require("sass"));
 const rename = require("gulp-rename"); //
 const concat = require("gulp-concat");
 const removeComments = require("gulp-strip-css-comments"); //удаление комментариев в файле стилей
-const autoprefixer = require("gulp-autoprefixer"); 
+const autoprefixer = require("gulp-autoprefixer");
 const uglify = require("gulp-uglify");
-const groupCssMediaQueries = require("gulp-group-css-media-queries");//объединять все идентичные селекторы в один
+const htmlmin = require("gulp-htmlmin");
+const groupCssMediaQueries = require("gulp-group-css-media-queries"); //объединять все идентичные селекторы в один
 const imagemin = require("gulp-imagemin"); //сжатие картинок
-const sourcemaps = require("gulp-sourcemaps"); 
+const newer = require("gulp-newer"); //сжатие картинок
+const sourcemaps = require("gulp-sourcemaps");
 const webp = require("gulp-webp"); //конвертация картинок в webp формат
 const fonter = require("gulp-fonter"); //конвертация шрифта
 const ttf2woff2 = require("gulp-ttf2woff2"); //конвертация шрифта в woff2 формат
+const ttf2woff = require("gulp-ttf2woff"); //конвертация шрифта в woff формат
+const ttf2eot = require("gulp-ttf2eot");
 const cssnano = require("gulp-cssnano"); //сжатие файла стиля
 const del = require("del");
 const browserSync = require("browser-sync").create(); //слежение за файлами
 const pug = require("gulp-pug");
-const nunjucksRender = require("gulp-nunjucks-render"); 
+const nunjucksRender = require("gulp-nunjucks-render");
 const fileInclude = require("gulp-file-include");
 
 const srcPath = "src/"; //папка с исходниками
@@ -32,17 +36,20 @@ function browsersync() {
     notify: false, //удаление всплывающего окна при обновлении
   });
 }
-
 function cleanStyle() {
   return src("src/css/*.css")
     .pipe(removeComments())
     .pipe(dest("src/css"));
 }
 function webpImg() {
-  return src("src/img/**/*").pipe(webp()).pipe(dest("src/img"));
+  return src("src/img/**/*.*")
+    .pipe(newer("src/img/**/*.*"))
+    .pipe(webp())
+    .pipe(dest("src/img"));
 }
 function images() {
-  return src("src/img/**/*")
+  return src("src/img/**/*.*")
+    .pipe(newer("src/img/**/*.*"))
     .pipe(
       imagemin([
         imagemin.gifsicle({
@@ -71,14 +78,18 @@ function images() {
 }
 function fonts() {
   return src("src/font/*.*")
+    .pipe(newer("src/font/*.*"))
     .pipe(
       fonter({
-        formats: ["ttf", "otf", "eot", "woff", "svg"],
+        // subset: [66, 67, 68, 69, 70, 71],
+        formats: ["woff", "ttf"], //конверт в формат woff
+        // formats: ["woff", "ttf", "eot"], //конверт в формат woff и ttf
       })
     )
     .pipe(ttf2woff2())
     .pipe(dest("src/font"));
 }
+
 function scripts() {
   return src([
     "node_modules/jquery/dist/jquery.js",
@@ -128,17 +139,21 @@ function html() {
       // .pipe(nunjucksRender()) //раскоментировать при работе с .njk
       // .pipe(pug({pretty: true})) //раскоментировать при работе с .pug
       .pipe(fileInclude({ prefix: "@", basepath: "@file" })) //раскоментировать при работе с .html
+      .pipe(dest("src"))
+      .pipe(htmlmin({ collapseWhitespace: true }))
+      .pipe(rename({ suffix: ".min" }))
       .pipe(sourcemaps.write())
       .pipe(dest("src"))
       .pipe(browserSync.reload({ stream: true }))
   );
 }
+
 function build() {
   return src(
     [
-      "src/*.html",
-      "src/css/*.css",
-      "src/js/*.js",
+      "src/*.min.html",
+      "src/css/*.min.css",
+      "src/js/*.min.js",
       "src/video/*.*",
       "src/img/**/*.*",
       "src/fonts/*.woff",
@@ -169,6 +184,7 @@ exports.fonts = fonts;
 exports.watching = watching;
 exports.cleanDist = cleanDist;
 exports.html = html;
+
 
 exports.build = series(cleanDist, cleanStyle, webpImg, images, build); //gulp build
 

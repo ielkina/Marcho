@@ -72,13 +72,13 @@ $(function () {
     },
   });
   $(".slider").slick({
-    dots: true,
-    arrows: false,
-    fade: true,
+    dots: true, //кнопки 
+    arrows: false, //убирает стрелки
+    // fade: true,//плавное появление, отключает перелистывание.
     // infinite: true,
     // slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 6000,
+    // autoplay: true, //авто перелистывание
+    autoplaySpeed: 6000, //скорость перелистывания
     // speed: 30000
     // speed: 3000
   });

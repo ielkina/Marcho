@@ -6,6 +6,8 @@
 *.sublime*
 npm-debug.
 # мои файлы
+/.vscode
 /node_modules
 /src/components
+/marcho
 package-lock.json

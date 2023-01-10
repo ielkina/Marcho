@@ -7,33 +7,60 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  // по видео
-  // background-size: cover;
-  // background-repeat: no-repeat;
+  @include r(1200) {
+    padding-top: 35px;
+  }
 
   &__container {
     max-width: 1560px;
-
   }
 }
 
 .slider {
   position: relative;
 
+  @include r(620) {
+    padding: 45px 0 65px;
+  }
+
   &__item {
     display: flex !important;
     justify-content: space-between;
+
+    @include r(1050) {
+      .slider__img {
+        display: none;
+      }
+    }
   }
 
   &__content {
-    padding-left: 181px;
-    padding-top: 125px;
+    padding: 125px 0 0 181px;
+
+    // padding-left: 181px;
+    // padding-top: 125px;
+    @include r(1200) {
+      padding: 0 0 50px 15px;
+    }
+
+    @include r(1050) {}
   }
 
   &__title {
     max-width: 690px;
     margin-bottom: 35px;
     @extend %title-h1;
+
+    @include r(620) {
+      font-size: 44px;
+      line-height: 52px;
+      margin-bottom: 25px;
+    }
+    @include r(475){
+      font-size: 35px;
+      line-height: 48px;
+      margin-bottom: 15px;
+    }
   }
 
   &__title-span {
@@ -43,13 +70,31 @@
   &__text {
     margin-bottom: 55px;
     max-width: 470px;
+
+    @include r(1200) {
+      margin-bottom: 30px;
+    }
   }
 
   &__link {
     padding: 19px 35px;
+    @include r(1050){
+      padding: 15px 30px;
+    }
+    @include r(476){
+      padding: 10px 25px;
+    }
   }
 
-  // &__img {}
+  &__img {
+    display: block;
+    max-width: 655px;
+
+    @include r(1200) {
+      width: 40%;
+      object-fit: contain;
+    }
+  }
 
   .slick-dots {
     display: flex;
@@ -58,6 +103,10 @@
     transform: translateX(-50%);
     bottom: 36px;
     font-size: 0px;
+
+    @include r(1050) {
+      margin-top: 0;
+    }
 
     li {
       width: 26px;
