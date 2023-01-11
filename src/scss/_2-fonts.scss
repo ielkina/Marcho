@@ -13,7 +13,6 @@ $roboto: "Roboto";
 $quicksand: "Quicksand";
 $myriadpro: "MyriadPro";
 
-
 @mixin font-face($font-family, $url, $weight) {
   @font-face {
     font-family: '#{$font-family}';
@@ -28,15 +27,79 @@ $myriadpro: "MyriadPro";
 //использование миксина
 // @include font-face(Quicksand, Quicksand-Light, 300);
 
-@mixin rubik-100($font-size) {
-  font-family: $rubik, $arial, $helvetica, $sans-serif;
+@mixin safe-font($font-family) {
+  font-family: '#{$font-family}',
+  $helvetica,
+  $arial $sans-serif;
+}
+
+//использование миксина
+//   @include safe-font(Rubik); //(Rubik) шрифт по макету
+
+
+@mixin font($font-family, $font-weight, $font-size) {
+  font-family: "#{$font-family}",
+  sans-serif;
+  font-weight: $font-weight;
+  font-size: #{$font-size}px;
+}
+
+// .main {
+//   @include font(Rubik, 700, 58)
+// }
+
+@mixin font-100($font-size) {
   font-weight: 100;
   font-size: #{$font-size}px;
 }
 
-//использование миксина 
-// @include rubik-100(10); //(10) размер шрифта в пикселях 
+@mixin font-200($font-size) {
+  font-weight: 200;
+  font-size: #{$font-size}px;
+}
 
+@mixin font-300($font-size) {
+  font-weight: 300;
+  font-size: #{$font-size}px;
+}
+
+@mixin font-400($font-size) {
+  font-weight: 400;
+  font-size: #{$font-size}px;
+}
+
+@mixin font-500($font-size) {
+  font-weight: 500;
+  font-size: #{$font-size}px;
+}
+
+@mixin font-600($font-size) {
+  font-weight: 600;
+  font-size: #{$font-size}px;
+}
+
+@mixin font-700($font-size) {
+  font-weight: 700;
+  font-size: #{$font-size}px;
+}
+
+@mixin font-800($font-size) {
+  font-weight: 800;
+  font-size: #{$font-size}px;
+}
+
+@mixin font-900($font-size) {
+  font-weight: 900;
+  font-size: #{$font-size}px;
+}
+
+@mixin font-950($font-size) {
+  font-weight: 950;
+  font-size: #{$font-size}px;
+}
+
+//использование миксинов 
+//@include rubik-100(50); //(50) размер шрифта в пикселях 
 
 @include font-face(Quicksand, Quicksand-Light, 300);
 @include font-face(Quicksand, Quicksand-Regular, 400);

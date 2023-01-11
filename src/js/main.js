@@ -77,7 +77,7 @@ $(function () {
     // fade: true,//плавное появление, отключает перелистывание.
     // infinite: true,
     // slidesToScroll: 1,
-    // autoplay: true, //авто перелистывание
+    autoplay: true, //авто перелистывание
     autoplaySpeed: 6000, //скорость перелистывания
     // speed: 30000
     // speed: 3000

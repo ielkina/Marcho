@@ -39,6 +39,16 @@
   line-height: 68px;
   color: #29282D;
   text-transform: uppercase;
+
+  @include r(620) {
+    font-size: 44px;
+    line-height: 52px;
+  }
+
+  @include r(475) {
+    font-size: 35px;
+    line-height: 48px;
+  }
 }
 
 %title-h2 {
@@ -48,6 +58,14 @@
   line-height: 26px;
   color: #29282D;
   text-align: center;
+
+  @include r(620) {
+    font-size: 40px;
+  }
+
+  @include r(475) {
+    font-size: 35px;
+  }
 }
 
 %item-hover {

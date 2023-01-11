@@ -3,7 +3,12 @@
   background-image: url(../img/decor/category-start.png);
   background-repeat: no-repeat;
   background-position: center left;
+
   // background-size: contain;
+  @include r(620) {
+    padding: 60px 0;
+  }
+
 
 
   &__inner {
@@ -20,12 +25,29 @@
   position: relative;
   margin-bottom: 110px;
 
+  @include r(1100) {
+    display: block;
+    // flex-wrap: wrap;
+    // justify-content: space-around;
+  }
+
   &__item {
-    max-width: 370px;
+    width: 370px;
     padding: 60px 40px;
     background-color: $bg;
     box-shadow: 20px 0px 60px #cacaca59;
     @extend %item-hover;
+
+    @include r(1200) {
+      width: 320px;
+      padding: 20px 20px;
+    }
+
+    @include r(1100) {
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
   }
 
   &::before,
@@ -51,17 +73,43 @@
     height: 52px;
     bottom: -23px;
     right: -23px;
+
+    @include r(1235) {
+      right: 0;
+    }
   }
 
   &__item-title {
     margin: 35px 0 10px;
     color: $title;
     font-size: 22px;
+
     @extend %roboto-400;
+
+    @include r(1100) {
+      margin: 20px 0 10px;
+    }
+
+    @include r(375) {
+      font-size: 20px;
+    }
   }
 }
 
 .category {
+  &__title {
+    @extend %title-h2;
+    margin-bottom: 12px;
+    @include r(375){
+      line-height: 1.2;
+    }
+  }
+
+  &__text {
+    max-width: 553px;
+    margin: 0 auto 55px;
+    text-align: center;
+  }
 
   &__items {
     display: grid;
@@ -69,17 +117,64 @@
     grid-template-columns: repeat(3, 1fr); //колонки
     grid-template-rows: repeat(2, 1fr); //строки
     grid-gap: 30px; //отступы между блоками
+
+    @include r(1100) {
+      grid-template-columns: repeat(2, 1fr); //колонки
+      grid-template-rows: auto; //строки
+    }
+
+    @include r(375) {
+      grid-template-columns: repeat(1, 1fr); //колонки
+      grid-template-rows: auto; //строки
+      grid-gap: 10px;
+    }
   }
 
   &__item {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    @extend %item-hover;
     padding: 35px 0 0 40px;
+    @extend %item-hover;
+
+    @include r(1100) {
+      background-position: center top;
+    }
+
+    @include r(540) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
+      padding-left: 10px;
+    }
+
+    @include r(375) {
+      background-position: top center;
+      background-size: contain;
+    }
+
 
     &:nth-child(1) {
       grid-row: span 2;
+      background-image: url(../img/content/category/category-1.jpg);
+      background-color: #eedeef;
+
+      @include r(1100) {
+        grid-row: auto;
+      }
+      @include r(375) {
+        background-position: center right;
+      }
+
+      @include r(1100) {
+        box-shadow: inset 0 0 0 200vw #eedeefa1;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          box-shadow: inset 0 0 0 200vw #deeeef00;
+        }
+      }
 
       .category__item-subtitle,
       .category__link:hover {
@@ -88,7 +183,7 @@
 
       .category__link:hover {
         font-weight: 700;
-        border-bottom: 2px solid #5800e4;
+        box-shadow: 0px 2px 0px 0px #5800e4;
       }
     }
 
@@ -98,24 +193,52 @@
       flex-direction: column;
       justify-content: center;
       padding-top: 0;
+      background-color: #deeeef;
+
+      @include r(1100) {
+        grid-column: auto;
+        background-position: center right;
+      }
+
+      @include r(375) {
+        background-position: bottom right;
+      }
+
+      @include r(1100) {
+        box-shadow: inset 0 0 0 200vw #deeeef96;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          box-shadow: inset 0 0 0 200vw #deeeef00;
+        }
+      }
 
       .category__item-subtitle,
       .category__link:hover {
         color: #fe3e57;
       }
 
-      .category__link {
-        line-height: 1.1;
-        width: 127px
-      }
-
       .category__link:hover {
         font-weight: 700;
-        border-bottom: 2px solid #fe3e57;
+        box-shadow: 0px 2px 0px 0px #fe3e57;
       }
     }
 
     &:nth-child(3) {
+      background-color: #fef6a9;
+
+      @include r(1100) {
+        box-shadow: inset 0 0 0 200vw #fef5a996;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          box-shadow: inset 0 0 0 200vw #deeeef00;
+        }
+      }
+
+      @include r(540) {
+        background-position: center right;
+      }
 
       .category__item-subtitle,
       .category__link:hover {
@@ -124,11 +247,25 @@
 
       .category__link:hover {
         font-weight: 700;
-        border-bottom: 2px solid #ffb534;
+        box-shadow: 0px 2px 0px 0px #ffb534;
       }
     }
 
     &:nth-child(4) {
+      background-color: #ececec;
+
+      @include r(1100) {
+        box-shadow: inset 0 0 0 200vw #ececec9a;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          box-shadow: inset 0 0 0 200vw #deeeef00;
+        }
+      }
+
+      @include r(540) {
+        background-position: center right;
+      }
 
       .category__item-subtitle,
       .category__link:hover {
@@ -137,7 +274,7 @@
 
       .category__link:hover {
         font-weight: 700;
-        border-bottom: 2px solid #34c3ff;
+        box-shadow: 0px 2px 0px 0px #34c3ff;
       }
     }
   }
@@ -158,21 +295,9 @@
   &__link {
     @extend %roboto-400;
     text-transform: uppercase;
-    padding: 0 2px 1px;
     color: $title;
+    line-height: 1;
+    width: fit-content;
     transition: all 0.2s ease-in;
-  }
-}
-
-.category {
-  &__title {
-    @extend %title-h2;
-    margin-bottom: 12px;
-  }
-
-  &__text {
-    max-width: 553px;
-    margin: 0 auto 55px;
-    text-align: center;
   }
 }

@@ -52,13 +52,10 @@
     @extend %title-h1;
 
     @include r(620) {
-      font-size: 44px;
-      line-height: 52px;
       margin-bottom: 25px;
     }
-    @include r(475){
-      font-size: 35px;
-      line-height: 48px;
+
+    @include r(475) {
       margin-bottom: 15px;
     }
   }
@@ -78,10 +75,12 @@
 
   &__link {
     padding: 19px 35px;
-    @include r(1050){
+
+    @include r(1050) {
       padding: 15px 30px;
     }
-    @include r(476){
+
+    @include r(476) {
       padding: 10px 25px;
     }
   }
