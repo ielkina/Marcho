@@ -1,10 +1,21 @@
 .page-404 {
   padding: 110px 0 120px;
 
+  @include r(860) {
+    padding: 60px 0;
+  }
+  @include r(375) {
+    padding: 30px 0;
+  }
+
   &__inner {
     display: flex;
     // justify-content: space-between;
     align-items: center;
+
+    @include r(860) {
+      flex-direction: column;
+    }
   }
 
   &__content {
@@ -18,16 +29,33 @@
     line-height: 0.58;
     color: #28384f;
     margin-bottom: 40px;
+
+    @include r(1200) {
+      line-height: 1.1;
+    }
+
+    @include r(375) {
+      margin-bottom: 30px;
+    }
   }
 
   &__text {
     max-width: 458px;
     margin-bottom: 64px;
+
+    @include r(375) {
+      margin-bottom: 30px;
+    }
   }
 
   &__link {
     padding: 14px 31px;
   }
 
-  // &__img {}
+  &__img {
+    @include r(860) {
+      order: -1;
+      margin-bottom: 30px;
+    }
+  }
 }

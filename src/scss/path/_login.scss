@@ -3,9 +3,23 @@
   max-width: 570px;
   margin: 0 auto 115px;
 
+  @include r(540) {
+    padding-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  @include r(375) {
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+
   &__links {
     text-align: center;
     margin-bottom: 60px;
+
+    @include r(375) {
+      margin-bottom: 30px;
+    }
   }
 
   &__link {
@@ -70,6 +84,7 @@
       background-color: transparent;
       color: $title;
     }
+
     &:disabled {
       cursor: not-allowed;
     }

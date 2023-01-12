@@ -4,6 +4,10 @@
   background-position: center center;
   background-repeat: no-repeat;
 
+  @include r(860) {
+    padding: 60px 0;
+  }
+
   &__title {
     @extend %roboto-700;
     font-size: 48px;
@@ -12,6 +16,10 @@
     color: $title;
     text-align: center;
     margin-bottom: 29px;
+
+    @include r(540) {
+      line-height: 47px;
+    }
   }
 
   &__text {
@@ -26,6 +34,20 @@
     justify-content: space-between;
     position: relative;
 
+    @include r(1200) {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include r(1050) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include r(768) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -35,6 +57,10 @@
       right: -24px;
       top: -31px;
       z-index: -1;
+
+      @include r(1235) {
+        right: 8px;
+      }
     }
   }
 
@@ -56,6 +82,10 @@
         }
       }
     }
+
+    @include r(1050) {
+      max-width: 100%;
+    }
   }
 
   &__item-imglink {
@@ -65,10 +95,23 @@
   &__item-img {
     height: 280px;
     object-fit: cover;
+
+    @include r(1050) {
+      width: 100%;
+      object-position: top;
+    }
+
+    @include r(375) {
+     height: 220px;
+    }
   }
 
   &__item-box {
     padding: 30px 40px;
+
+    @include r(1200) {
+      padding: 20px 15px;
+    }
   }
 
   &__item-info {
@@ -77,6 +120,10 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+
+    @include r(375) {
+      display: block;
+    }
   }
 
   &__item-author,
@@ -104,6 +151,10 @@
         fill: $text;
       }
     }
+  }
+
+  &__item-icon {
+    fill: aqua;
   }
 
   &__item-title-link {
