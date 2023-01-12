@@ -1,5 +1,4 @@
-// .section {}
-// .container {}
+@import '../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox';
 
 .fashion {
   background-image: url(../img/decor/fashion-bg.svg);
@@ -9,8 +8,16 @@
   background-color: $bg-footer;
   padding: 125px 0;
 
+  @include r(620) {
+    padding: 60px 0;
+  }
+
   &__inner {
     display: flex;
+
+    @include r(1050) {
+      display: block;
+    }
   }
 
   &__popup {
@@ -24,6 +31,14 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+
+    @include r(1050) {
+      background-position: top center;
+      max-width: 100%;
+    }
+    @include r(620) {
+      height: 270px;
+    }
   }
 
   &__play {
@@ -37,6 +52,10 @@
 
   &__content {
     max-width: 570px;
+
+    @include r(1050) {
+      max-width: 100%;
+    }
   }
 
   &__subtitle {
@@ -46,6 +65,11 @@
     text-transform: uppercase;
     color: $accent;
     margin-bottom: 24px;
+
+    @include r(620) {
+      padding-top: 40px;
+      font-size: 18px;
+    }
   }
 
   &__title {

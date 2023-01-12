@@ -17,6 +17,9 @@
     @include r(500) {
       padding-right: 0px;
     }
+    @include r(375) {
+      padding: 15px 0px;
+    }
   }
 }
 

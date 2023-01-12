@@ -7,6 +7,24 @@
     background-position: top center;
     padding: 120px 0 130px;
     text-align: center;
+
+    @include r(1200) {
+      padding: 100px 0 110px;
+    }
+
+    @include r(1100) {
+      padding: 80px 0 80px;
+    }
+
+    @include r(860) {
+      padding: 60px 0 60px;
+    }
+
+    @include r(620) {
+      background-color: #ececec;
+      background-image: none !important;
+      padding: 30px 0 30px;
+    }
   }
 
   &__title {
@@ -14,6 +32,14 @@
     text-transform: uppercase;
     font-size: 48px;
     color: #15181d;
+
+    @include r(620) {
+      font-size: 38px;
+    }
+
+    @include r(476) {
+      font-size: 28px;
+    }
   }
 }
 

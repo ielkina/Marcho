@@ -29,11 +29,14 @@
     flex-wrap: wrap;
   }
 
-  @include r(860) {}
+  @include r(860) {
+    padding: 20px 0;
+  }
 
   &__contact {
     width: 250px;
     margin-right: 50px;
+
     @include r(860) {
       width: 100%;
       height: 191px;
@@ -103,7 +106,7 @@
       pointer-events: auto;
       position: relative;
       padding-right: 25px;
-       margin-bottom: 20px;
+      margin-bottom: 20px;
 
       &::after {
         position: absolute;
@@ -156,6 +159,7 @@
       max-width: 100%;
       margin-top: 30px;
     }
+
     @include r(860) {
       margin-top: 20px;
     }

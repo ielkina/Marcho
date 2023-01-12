@@ -6,6 +6,23 @@
   padding: 150px 0 160px;
   text-align: center;
 
+  @include r(1200) {
+    background-position: left;
+    padding: 100px 0 100px;
+  }
+
+  @include r(1100) {
+    padding: 60px 0;
+  }
+
+  @include r(576) {
+    background-position: -300px;
+  }
+
+  // @include r(375) {
+  //   background-position: -400px;
+  // }
+
   &__inner {
     max-width: 570px;
     width: 100%;
@@ -30,11 +47,32 @@
     color: #29282d;
     text-transform: uppercase;
     margin-bottom: 60px;
+
+    @include r(860) {
+      margin-bottom: 30px;
+    }
+
+    @include r(768) {
+      font-size: 38px;
+    }
+
+    @include r(540) {
+      line-height: 47px;
+    }
   }
 
   &__clock {
     display: flex;
     margin-bottom: 60px;
+
+    @include r(860) {
+      margin-bottom: 30px;
+    }
+
+    @include r(620) {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
   }
 
   &__clock-item {
@@ -50,6 +88,18 @@
 
     &:not(:last-child) {
       margin-right: 29px;
+
+      @include r(620) {
+        margin-right: 0;
+      }
+    }
+
+    @include r(620) {
+      margin: 20px 35px;
+    }
+
+    @include r(450) {
+      margin: 8px;
     }
   }
 
@@ -80,15 +130,49 @@
     padding: 14px 27px;
     margin-top: 55px;
     @extend %btn-light-hover;
+
+    @include r(860) {
+      margin-top: 0px;
+    }
   }
 }
 
 .partners {
   padding: 110px 0 110px;
+
+  @include r(1100) {
+    padding: 60px 0;
+  }
+  @include r(768) {
+    padding: 20px;
+  }
+  @include r(540) {
+    padding: 15px;
+  }
+
   &__list {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 60px;
+
+    @include r(860) {
+      flex-wrap: wrap;
+      justify-content: center;
+      height: auto;
+    }
+  }
+
+  &__item {
+    @include r(860) {
+      margin: 0px 86px;
+    }
+
+    @include r(768) {
+      margin: 0px 50px;
+    }
+    @include r(540) {
+      margin: 0px 20px;
+    }
   }
 }
