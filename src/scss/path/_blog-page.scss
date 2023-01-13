@@ -1,11 +1,39 @@
 .blog-page {
   padding: 120px 0 60px;
 
+  @include r(1200) {
+
+    .filter-category,
+    .filter-popular {
+      display: none;
+    }
+
+    .filter-search {
+      &__input {
+        width: 100%;
+      }
+    }
+  }
+
+  @include r(620) {
+    padding: 60px 0;
+  }
+
+  @include r(375) {
+    .filter__item {
+      padding: 25px 15px;
+    }
+  }
+
   // .blog-page__inner
 
   &__inner {
     display: flex;
     justify-content: space-between;
+
+    @include r(1200) {
+      flex-direction: column;
+    }
   }
 
   // .blog-page__content
@@ -13,6 +41,11 @@
   &__content {
     width: 770px;
     margin-right: 30px;
+
+    @include r(1200) {
+      width: 100%;
+      margin-right: 0;
+    }
   }
 
   // .blog-page__item
@@ -43,6 +76,9 @@
   &__item-link {
     display: block;
 
+    // @include r(1200) {
+    //   width: 100%;
+    // }
   }
 
   // .blog-page__img
@@ -52,12 +88,33 @@
     max-width: 770px;
     height: 450px;
     object-fit: cover;
+
+    @include r(1200) {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    @include r(620) {
+      height: 260px;
+    }
+
+    @include r(375) {
+      height: 170px;
+    }
   }
 
   // .blog-page__item-box
 
   &__item-box {
     padding: 40px;
+
+    @include r(620) {
+      padding: 20px;
+    }
+
+    @include r(375) {
+      padding: 10px 5px;
+    }
   }
 
   // .blog-page__item-title
@@ -105,10 +162,12 @@
   // .blog-page__slide
 
   &__slide {
-    width: 770px;
+    max-width: 770px;
     position: relative;
     display: flex;
     align-items: center;
+
+    @include r(1200) {}
 
     & .slick-slide {
       height: 450px;
@@ -159,6 +218,11 @@
 
   &__aside {
     width: 370px;
+
+    @include r(1200) {
+      order: -1;
+      width: 100%;
+    }
   }
 }
 
@@ -191,7 +255,11 @@
   border: 1px solid #ececec;
   padding: 39px 30px;
   margin-bottom: 40px;
+
   // .person__photo
+  @include r(1200) {
+    display: none;
+  }
 
   &__photo {
     display: inline-block;
@@ -271,6 +339,11 @@
   padding: 40px 25px;
   border: 1px solid #ececec;
   margin-bottom: 40px;
+
+  @include r(1200) {
+    display: none;
+  }
+
   // .last-posts__ttle
 
   &__title {

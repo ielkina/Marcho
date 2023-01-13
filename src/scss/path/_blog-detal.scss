@@ -1,16 +1,52 @@
 .blog-one {
 
+  .comments {
+    @include r(450) {
+      display: block;
+    }
+  }
+
+  .comments__img {
+    @include r(450) {
+      margin-bottom: 15px;
+    }
+  }
+
   .comments__title {
     margin-bottom: 33px;
   }
+
   .comments-form {
     border-top: 1px solid #ecec;
+  }
+
+  @include r(620) {
+    .comments-form__box-input {
+      display: block;
+      margin-bottom: 0;
+    }
+
+    .comments-form__text-input {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__img {
+    @include r(1200) {
+      max-width: 100%;
+      width: 100%;
+    }
   }
 
   &__img-left {
     float: left;
     margin-right: 30px;
     margin-bottom: 10px;
+
+    @include r(1200) {
+      height: 200px;
+    }
   }
 
   &__img-right {
@@ -26,6 +62,10 @@
     margin-top: -1px;
     text-align: justify;
     word-spacing: -0.9px;
+
+    @include r(620) {
+      padding: 20px 10px;
+    }
 
     h4 {
       @extend %roboto-500;
@@ -55,6 +95,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 25px;
+
+    @include r(620) {
+      display: block;
+    }
   }
 
   &__info-item {
@@ -75,6 +119,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include r(620) {
+      flex-wrap: wrap;
+      padding-right: 10px;
+    }
+
+    @include r(450) {
+      display: block;
+    }
   }
 
   &__share,
@@ -101,6 +154,7 @@
   &__share-ink {
     padding-left: 8px;
     vertical-align: middle;
+
     &:hover {
       .blog-one__share-icon {
         fill: $accent;
@@ -119,6 +173,10 @@
     padding-bottom: 40px;
     border-bottom: 1px solid #ecec;
     margin-bottom: 40px;
+
+    @include r(450) {
+      display: block;
+    }
   }
 
   &__author-img {
@@ -127,6 +185,11 @@
     height: 140px;
     object-fit: cover;
     margin-right: 30px;
+
+    @include r(450) {
+      margin-bottom: 30px;
+    }
+
   }
 
   &__author-name {

@@ -112,7 +112,7 @@ function scripts() {
 }
 function styles() {
   return (
-    src("src/scss/*.scss")
+    src("src/scss/*.scss", "arc/sass/*.sass")
       .pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(groupCssMediaQueries())
@@ -170,6 +170,7 @@ function cleanDist() {
 function watching() {
   watch(["src/html/**/*.*"], html);
   watch(["src/scss/**/*.scss"], styles);
+  watch(["src/sass/**/*.sass"], styles);
   watch(["src/js/**/*.js", "!src/js/main.min.js"], scripts);
   watch(["src/*.html"]).on("change", browserSync.reload);
 }
