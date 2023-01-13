@@ -2640,6 +2640,10 @@ body.compensate-for-scrollbar {
     line-height: 1.1;
   }
 
+  .page-404__img {
+    width: 40%;
+  }
+
   .hero {
     padding-top: 35px;
   }
@@ -2814,6 +2818,13 @@ body.compensate-for-scrollbar {
   }
 }
 
+@media (max-width: 992px) {
+  .page-404__img {
+    order: -1;
+    margin-bottom: 30px;
+  }
+}
+
 @media (max-width: 860px) {
   .menu {
     order: 1;
@@ -2904,11 +2915,6 @@ body.compensate-for-scrollbar {
 
   .page-404__inner {
     flex-direction: column;
-  }
-
-  .page-404__img {
-    order: -1;
-    margin-bottom: 30px;
   }
 
   .product__items {

@@ -4,6 +4,7 @@
   @include r(860) {
     padding: 60px 0;
   }
+
   @include r(375) {
     padding: 30px 0;
   }
@@ -53,7 +54,11 @@
   }
 
   &__img {
-    @include r(860) {
+    @include r(1200) {
+      width: 40%;
+    }
+
+    @include r(992) {
       order: -1;
       margin-bottom: 30px;
     }
