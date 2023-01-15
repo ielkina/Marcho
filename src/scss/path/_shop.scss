@@ -1,14 +1,56 @@
+@import '../../node_modules/ion-rangeslider/css/ion.rangeSlider';
+@import '../../node_modules/jquery-form-styler/dist/jquery.formstyler';
+
 .shop {
   // display: flex;
   padding: 120px 0 105px;
 
   &__inner {
     display: flex;
+
+    @include r(1230) {
+      display: block;
+    }
   }
 
   &__filters {
     width: 370px;
     margin-right: 30px;
+
+    @include r(1230) {
+      width: 100%;
+      margin-right: 0;
+      display: none;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      z-index: 100;
+      background-color: #fff;
+    }
+  }
+
+  &__filter-btn {
+    display: none;
+
+    @include r(1230) {
+      display: block;
+      border: 0;
+      background-color: $accent;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 50%;
+      right: 0;
+      z-index: 101;
+
+      & svg {
+        fill: #fff;
+      }
+    }
   }
 
   &__content {}
@@ -305,6 +347,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include r(700) {
+      padding: 20px 25px 20px 0;
+    }
   }
 
   &__inner {
@@ -312,14 +358,42 @@
     justify-content: space-between;
     flex-wrap: wrap;
     border-bottom: 1px solid #ecec;
+
+    @include r(1230) {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include r(860) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include r(620) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+
+
     .product-item {
       margin-bottom: 40px;
     }
   }
 
+  &__nogrid {
+    @include r(1230) {
+      display: flex;
+    }
+
+  }
+
   &__filter-buttons {
     display: flex;
     align-items: center;
+
+    @include r(700) {
+      display: none;
+    }
   }
 
   &__filter-btn {

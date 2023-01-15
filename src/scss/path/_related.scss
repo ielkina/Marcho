@@ -1,6 +1,10 @@
 .related {
   padding: 50px 0 120px;
 
+  @include r(860) {
+    padding: 50px 0 60px;
+  }
+
   &__title {
     font-family: 'Roboto', sans-serif;
     font-size: 48px;
@@ -10,12 +14,36 @@
     text-align: center;
     color: #29282d;
     margin-bottom: 60px;
+
+    @include r(560) {
+      font-size: 28;
+      line-height: 1.1;
+    }
+  }
+
+  & .related__items {
+    @include r(860) {
+      margin-bottom: 0px;
+    }
+  }
+
+  & .product-item {
+    @include r(860) {
+      margin-bottom: 30px;
+    }
   }
 
   &__items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 30px;
+
+    @include r(768) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include r(530) {
+      grid-template-columns: repeat(1, 1fr);
+    }
 
     & .product-item__img-box {
       height: auto;
@@ -24,6 +52,10 @@
     & .product-item__images {
       object-position: bottom center;
       height: 270px;
+
+      // @include r(860) {
+      //   height: 150px;
+      // }
     }
 
     & .product-item__title {

@@ -20,7 +20,7 @@ html {
 
 // Убираем вертикальный скролл
 ::-webkit-scrollbar {
-  width: 0;
+  // width: 0;
 }
 
 body {
@@ -120,6 +120,12 @@ button {
     display: flex;
     align-items: center;
 
+    @include r(450) {
+      font-size: 0;
+      //или
+      // display: none;
+    }
+
     &:hover {
 
       & .pagination__prev-icon,
@@ -139,11 +145,24 @@ button {
   &__list {
     display: flex;
     padding: 0 35px;
+
     // margin-right: 46px;
+    @include r(375) {
+      padding: 0 15px;
+    }
   }
 
   &__item {
     padding: 0 15px;
+
+    @include r(375) {
+      padding: 0 7px;
+
+      &:nth-child(3) {
+        // display: none;
+
+      }
+    }
   }
 
   &__link {

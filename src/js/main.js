@@ -4,6 +4,10 @@ $(".comments-form__btn").click(function () {
 });
 
 $(function () {
+  $(".shop__filter-btn").on("click", function () {
+    $(".shop__filters").slideToggle();
+  });
+
   $(".footer-top__title").on("click", function () {
     $(this).siblings().slideToggle();
     $(this).toggleClass("active");
@@ -34,6 +38,15 @@ $(function () {
     arrows: false,
     fade: true,
     asNavFor: ".product-slide__thumb",
+    responsive: [
+      {
+        breakpoint: 1100,
+        settings: {
+          draggable: true,
+          dots: true
+        },
+      },
+    ],
   });
   $(".blog-page__slide").slick({
     infinite: false,
@@ -50,9 +63,11 @@ $(function () {
   });
   $(".button-list").on("click", function () {
     $(".product-item").addClass("product-item--list");
+    $(".shop-content__inner").addClass("shop-content__nogrid");
   });
   $(".button-grid").on("click", function () {
     $(".product-item").removeClass("product-item--list");
+    $(".shop-content__inner").removeClass("shop-content__nogrid");
   });
   $(".select-style, .product-one__num").styler();
   $(".filter-price__input").ionRangeSlider({
@@ -82,34 +97,34 @@ $(function () {
     // speed: 30000
     // speed: 3000
   });
-  // $(".product-item__star, .product-one__star, .comments__content-star").rateYo({
-  //   starWidth: "17px",
-  //   normalFill: "#ccccce",
-  //   ratedFill: "#ffc35b",
-  //   // ratedStroke: "#ffc35b",
-  //   // rating: 4,
-  //   // spacing: "5px",
-  //   // multiColor: {
-  //   //   "startColor": "#FF0000", //RED
-  //   //   "endColor": "#00FF00"  //GREEN
-  //   // },
-  //   // numStars: 10,
-  //   // maxValue: 1,
-  //   // numStars: 1,
-  //   // starWidth: "40px",
-  //   // precision: 2,
-  //   // rating: "50%",
-  //   // precision: 0,
-  //   // rating: 1.5,
-  //   // halfStar: true,
-  //   // fullStar: true,
-  //   // rating: 3.2,
-  //   readOnly: true,
-  //   starSvg:
-  //     ' <svg class="icon">' +
-  //     ' <use xlink:href="img/icons/sprite.svg#icon-star"></use>' +
-  //     "</svg>",
-  // });
+  $(".product-item__star, .product-one__star, .comments__content-star").rateYo({
+    starWidth: "17px",
+    normalFill: "#ccccce",
+    ratedFill: "#ffc35b",
+    // ratedStroke: "#ffc35b",
+    // rating: 4,
+    // spacing: "5px",
+    // multiColor: {
+    //   "startColor": "#FF0000", //RED
+    //   "endColor": "#00FF00"  //GREEN
+    // },
+    // numStars: 10,
+    // maxValue: 1,
+    // numStars: 1,
+    // starWidth: "40px",
+    // precision: 2,
+    // rating: "50%",
+    // precision: 0,
+    // rating: 1.5,
+    // halfStar: true,
+    // fullStar: true,
+    // rating: 3.2,
+    readOnly: true,
+    starSvg:
+      ' <svg class="icon">' +
+      ' <use xlink:href="img/icons/sprite.svg#icon-star"></use>' +
+      "</svg>",
+  });
   $(".product-item__star").rateYo({
     starWidth: "17px",
     normalFill: "#ccccce",

@@ -1,5 +1,5 @@
 const { src, dest, watch, parallel, series } = require("gulp");
-
+// ----------------------------------------------------------
 const scss = require("gulp-sass")(require("sass"));
 const sass = require("gulp-sass")(require("sass"));
 const rename = require("gulp-rename"); //
@@ -23,7 +23,7 @@ const browserSync = require("browser-sync").create(); //слежение за ф
 const pug = require("gulp-pug");
 const nunjucksRender = require("gulp-nunjucks-render");
 const fileInclude = require("gulp-file-include");
-
+// -----------------------------------------------------------
 const srcPath = "src/"; //папка с исходниками
 const distPath = "marcho/"; //название репозитория готового проекта изменить на нужное название
 
@@ -37,12 +37,10 @@ function browsersync() {
   });
 }
 function cleanStyle() {
-  return src("src/css/*.css")
-    .pipe(removeComments())
-    .pipe(dest("src/css"));
+  return src("src/css/*.css").pipe(removeComments()).pipe(dest("src/css"));
 }
 function webpImg() {
-  return src("src/img/**/*.*")
+  return src("src/img/**/*.jpg")
     .pipe(newer("src/img/**/*.*"))
     .pipe(webp())
     .pipe(dest("src/img"));
@@ -89,7 +87,6 @@ function fonts() {
     .pipe(ttf2woff2())
     .pipe(dest("src/font"));
 }
-
 function scripts() {
   return src([
     "node_modules/jquery/dist/jquery.js",
@@ -134,7 +131,7 @@ function styles() {
 }
 function html() {
   return (
-    src(["src/html/*.html", "src/*.njk", "src/*.pug"])
+    src(["src/html/*.html", "src/pages/*.html", "src/*.njk", "src/*.pug"])
       .pipe(sourcemaps.init())
       // .pipe(nunjucksRender()) //раскоментировать при работе с .njk
       // .pipe(pug({pretty: true})) //раскоментировать при работе с .pug
@@ -147,7 +144,6 @@ function html() {
       .pipe(browserSync.reload({ stream: true }))
   );
 }
-
 function build() {
   return src(
     [
@@ -175,6 +171,7 @@ function watching() {
   watch(["src/*.html"]).on("change", browserSync.reload);
 }
 
+exports.html = html;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.browsersync = browsersync;
@@ -184,9 +181,6 @@ exports.cleanStyle = cleanStyle;
 exports.fonts = fonts;
 exports.watching = watching;
 exports.cleanDist = cleanDist;
-exports.html = html;
-
 
 exports.build = series(cleanDist, cleanStyle, webpImg, images, build); //gulp build
-
 exports.default = parallel(html, styles, scripts, browsersync, watching); //gulp

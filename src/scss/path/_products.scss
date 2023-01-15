@@ -15,9 +15,10 @@
     line-height: 26px;
     color: $title;
     margin-bottom: 30px;
-        @include r(540){
-          line-height: 47px;
-        }
+
+    @include r(540) {
+      line-height: 47px;
+    }
   }
 
   &__text {
@@ -81,6 +82,10 @@
       min-width: 200px;
       height: 250px;
       margin-bottom: 0;
+      // @include r(540) {
+      //  min-width: 100%;
+      //  width: 100%;
+      // }
 
 
       img {
@@ -93,6 +98,12 @@
         display: none;
       }
     }
+
+    // .product-item__images {
+    //   @include r(375) {
+    //     height: 150px;
+    //   }
+    // }
 
     .product-item__link-box {
       background-color: transparent;

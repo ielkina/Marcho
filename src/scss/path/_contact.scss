@@ -1,17 +1,38 @@
 .contact {
   padding: 120px 0;
 
+  @include r(860) {
+    padding: 60px 0;
+  }
+
   &__map {
     margin-bottom: 120px;
+
+    @include r(860) {
+      margin-bottom: 60px;
+    }
   }
 
   &__inner {
     display: flex;
+
+    @include r(1100) {
+      display: block;
+      // flex-wrap: wrap;
+    }
   }
 
   &__info {
     max-width: 370px;
     margin-right: 40px;
+
+    @include r(1100) {
+      margin-right: 0;
+      min-width: 100%;
+      margin-bottom: 30px;
+      // display: flex;
+      // justify-content: space-between;
+    }
   }
 
   &__info-title {
@@ -21,15 +42,33 @@
     line-height: 1.21;
     color: #292929;
     margin-bottom: 20px;
+
+    @include r(540) {
+      font-size: 28px;
+      line-height: 34px;
+    }
+  }
+
+  &__info-list {
+    // @include r(1100) {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: space-between;
+    // }
+    // @include r(860) {
+    //   display: block;
+    // }
   }
 
   &__info-text {
     text-align: justify;
     word-break: break-all;
     margin-bottom: 60px;
-  }
 
-  &__info-list {}
+    @include r(375) {
+      margin-bottom: 30px;
+    }
+  }
 
   &__info-item {
     padding-left: 80px;
@@ -38,8 +77,17 @@
     flex-direction: column;
     position: relative;
 
+    @include r(375) {
+      padding-left: 0;
+      padding-top: 70px;
+    }
+
     &:not(:last-child) {
       margin-bottom: 30px;
+
+      // @include r(1100) {
+      //   margin-bottom: 0;
+      // }
     }
 
     &::before,
@@ -49,6 +97,10 @@
       left: 0;
       width: 60px;
       height: 60px;
+
+      @include r(375) {
+        top: 0;
+      }
     }
 
     &::before {
@@ -91,6 +143,10 @@
     font-weight: 500;
     line-height: 1.63;
     color: #292929;
+
+    @include r(375) {
+      font-size: 14px;
+    }
   }
 
   &__info-tel {
@@ -107,6 +163,10 @@
     width: 100%;
     padding: 60px 40px;
     box-shadow: 0px 10px 40px 0 #acacac4d;
+
+    @include r(1100) {
+      padding: 20px 10px;
+    }
   }
 
   &__form-title {
@@ -118,9 +178,21 @@
     margin-bottom: 30px;
   }
 
+  &__form-input {
+    &:nth-child(1) {
+      @include r(860) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
   &__info-box {
     display: flex;
     margin-bottom: 30px;
+
+    @include r(860) {
+      display: block;
+    }
 
     & .contact__form-input {
       &:nth-child(1) {
@@ -193,4 +265,8 @@
 #map {
   width: 100%;
   height: 450px;
+
+  @include r(540) {
+    height: 250px;
+  }
 }
