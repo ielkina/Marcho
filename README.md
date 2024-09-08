@@ -15,6 +15,4 @@ npm uninstall less
 
 #Marcho
 
-https://ielkina.github.io/Marcho/
-
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=ielkina&repo=Marcho)](https://github.com/ielkina/Marcho)
